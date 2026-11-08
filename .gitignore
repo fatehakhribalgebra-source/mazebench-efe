@@ -12,3 +12,6 @@ venv/
 # cost an overnight collection run and is what training starts from.
 runs/**/buffer.npz
 !runs/bigbuffer/buffer.npz
+
+# Local transfer bundle, not part of the history it carries.
+*.bundle
