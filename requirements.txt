@@ -1,0 +1,10 @@
+# core -- everything in the default (tile) pipeline needs only these
+torch>=2.1
+numpy>=1.24
+
+# optional: the transfer-learning / pixel path in model/vision.py
+# transformers>=4.46
+# pillow>=10.0
+
+# optional: running the test suite under pytest instead of `python tests/test_all.py`
+# pytest>=7.4

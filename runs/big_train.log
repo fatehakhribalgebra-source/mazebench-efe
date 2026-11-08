@@ -1,0 +1,42 @@
+device: cuda   engine: mock   out: runs\big
+loading buffer runs/bigbuffer/buffer.npz
+collecting 12 validation episodes
+  episode 1/12:  256 transitions  0 gems  1 rooms  novelty 0.02
+  episode 2/12:  256 transitions  1 gems  2 rooms  novelty 0.63
+  episode 3/12:  256 transitions  2 gems  4 rooms  novelty 0.77
+  episode 4/12:  256 transitions  3 gems  4 rooms  novelty 0.69
+  episode 5/12:  256 transitions  0 gems  2 rooms  novelty 0.02
+  episode 6/12:  256 transitions  0 gems  2 rooms  novelty 0.23
+  episode 7/12:  256 transitions  0 gems  4 rooms  novelty 0.59
+  episode 8/12:  256 transitions  1 gems  3 rooms  novelty 0.55
+  episode 9/12:  256 transitions  2 gems  4 rooms  novelty 0.62
+  episode 10/12:  256 transitions  1 gems  4 rooms  novelty 0.62
+  episode 11/12:  256 transitions  0 gems  3 rooms  novelty 0.33
+  episode 12/12:  256 transitions  0 gems  2 rooms  novelty 0.21
+label stats: {
+  "transitions": 179139,
+  "gem_rate": 0.0030814060589821313,
+  "room_change_rate": 0.011851132360904102,
+  "moved_rate": 0.8294787846309291,
+  "death_rate": 0.0003460999559001669
+}
+trainable params: 1.68M
+[L1 1/12] loss 3.4261 tile 0.768 changed 0.155 gem_rec 0.205/prec 0.344 | val changed 0.233 gem_rec 0.104  (43s)
+[L1 2/12] loss 1.5685 tile 0.803 changed 0.223 gem_rec 0.853/prec 0.904 | val changed 0.343 gem_rec 0.042  (37s)
+[L1 3/12] loss 1.1457 tile 0.833 changed 0.368 gem_rec 0.954/prec 0.958 | val changed 0.448 gem_rec 0.167  (41s)
+[L1 4/12] loss 0.8945 tile 0.878 changed 0.553 gem_rec 0.970/prec 0.965 | val changed 0.572 gem_rec 0.083  (37s)
+[L1 5/12] loss 0.7574 tile 0.905 changed 0.664 gem_rec 0.974/prec 0.971 | val changed 0.669 gem_rec 0.146  (24s)
+[L1 6/12] loss 0.6466 tile 0.922 changed 0.728 gem_rec 0.993/prec 0.993 | val changed 0.715 gem_rec 0.188  (24s)
+[L1 7/12] loss 0.6007 tile 0.927 changed 0.752 gem_rec 0.998/prec 0.992 | val changed 0.772 gem_rec 0.167  (41s)
+[L1 8/12] loss 0.5623 tile 0.932 changed 0.774 gem_rec 1.000/prec 0.995 | val changed 0.756 gem_rec 0.167  (46s)
+[L1 9/12] loss 0.5403 tile 0.935 changed 0.783 gem_rec 0.996/prec 0.993 | val changed 0.791 gem_rec 0.167  (47s)
+[L1 10/12] loss 0.5302 tile 0.936 changed 0.788 gem_rec 0.996/prec 0.994 | val changed 0.812 gem_rec 0.167  (37s)
+[L1 11/12] loss 0.5196 tile 0.937 changed 0.796 gem_rec 1.000/prec 0.998 | val changed 0.811 gem_rec 0.167  (42s)
+[L1 12/12] loss 0.5149 tile 0.938 changed 0.800 gem_rec 1.000/prec 0.999 | val changed 0.815 gem_rec 0.167  (27s)
+  chunk samples per level: {'level2_stride4': 176172, 'joint': 176172}
+[H 1/4] L2:pred 0.2638/var 0.1564
+[H 2/4] L2:pred 0.1682/var 0.1012
+[H 3/4] L2:pred 0.1562/var 0.0835
+[H 4/4] L2:pred 0.1445/var 0.0769
+
+saved runs\big\final.pt  and  runs\big\report.json

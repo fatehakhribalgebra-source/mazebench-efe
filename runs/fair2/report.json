@@ -1,0 +1,112 @@
+{
+  "args": {
+    "engine": "mock",
+    "repo_root": null,
+    "real_levels": true,
+    "node_bin": null,
+    "level": "level_HxI",
+    "view": "top-diagonal",
+    "out": "runs/fair2",
+    "buffer": "runs/demo/buffer.npz",
+    "episodes": 16,
+    "val_episodes": 0,
+    "max_actions": 256,
+    "policy": "heuristic",
+    "window": 15,
+    "seed": 0,
+    "epochs": 1,
+    "l2_epochs": 5,
+    "steps_per_epoch": 20,
+    "batch_size": 32,
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "bootstrap_p": 0.8,
+    "members": 3,
+    "channels": 64,
+    "chunk_len": 4,
+    "levels": 2,
+    "index_levels": 4,
+    "dyna_rounds": 0,
+    "device": "cuda"
+  },
+  "label_stats": {
+    "transitions": 7029,
+    "gem_rate": 0.015507184521269028,
+    "room_change_rate": 0.011239152084222506,
+    "moved_rate": 0.8086498790724143,
+    "death_rate": 0.020059752454118653
+  },
+  "level1": {
+    "history": [
+      {
+        "epoch": 1,
+        "train": {
+          "loss": 7.114293479919434,
+          "latent": 0.7109576240181923,
+          "tile": 3.349471926689148,
+          "tile_acc": 0.6297916755080223,
+          "changed_tile_acc": 0.1037923837080598,
+          "gem": 0.822499331831932,
+          "gem_acc": 0.6125,
+          "gem_recall": 0.13935120534151793,
+          "gem_precision": 0.2103278622031212,
+          "gem_pos_rate": 0.378125,
+          "room": 0.44053969010710714,
+          "aux": 1.875630521774292,
+          "vicreg_var": 0.8024989575147629,
+          "vicreg_cov": 0.27425893526524303
+        },
+        "val": {}
+      }
+    ],
+    "best": {
+      "changed_tile_acc": 0.1037923837080598,
+      "epoch": 1
+    }
+  },
+  "hierarchy": {
+    "history": [
+      {
+        "epoch": 1,
+        "l2_pred": 0.16285497837123417,
+        "l2_var": 0.5660218702895301,
+        "l2_cov": 1.149578190275601,
+        "l2_stride": 4.0,
+        "l_total": 0.7748599762008304
+      },
+      {
+        "epoch": 2,
+        "l2_pred": 0.18997607859117643,
+        "l2_var": 0.4965727613085792,
+        "l2_cov": 1.4917915137041182,
+        "l2_stride": 4.0,
+        "l_total": 0.7462204999866939
+      },
+      {
+        "epoch": 3,
+        "l2_pred": 0.17823058242599168,
+        "l2_var": 0.481866944758665,
+        "l2_cov": 1.660716644355229,
+        "l2_stride": 4.0,
+        "l_total": 0.7265261901276452
+      },
+      {
+        "epoch": 4,
+        "l2_pred": 0.17552545719913074,
+        "l2_var": 0.4739642522874333,
+        "l2_cov": 1.7061169268119902,
+        "l2_stride": 4.0,
+        "l_total": 0.71773438226609
+      },
+      {
+        "epoch": 5,
+        "l2_pred": 0.16826137527823448,
+        "l2_var": 0.4736246221831867,
+        "l2_cov": 1.7021092297065825,
+        "l2_stride": 4.0,
+        "l_total": 0.7099703678062984
+      }
+    ]
+  }
+}

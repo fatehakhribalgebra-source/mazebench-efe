@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Trained checkpoints: ~7 MB each, 18 of them, and every one is a window-15
+# model that the --window 31 baseline supersedes. Regenerable from the buffer.
+*.pt
+
+# Episode buffers are regenerable too -- except the 700-episode one, which
+# cost an overnight collection run and is what training starts from.
+runs/**/buffer.npz
+!runs/bigbuffer/buffer.npz

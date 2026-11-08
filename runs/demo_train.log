@@ -1,0 +1,85 @@
+device: cuda   engine: mock   out: runs\demo
+collecting 28 episodes with policy=heuristic
+  episode 1/28:  256 transitions  3 gems  2 rooms  novelty 0.53
+  episode 2/28:  256 transitions  6 gems  4 rooms  novelty 0.62
+  episode 3/28:  256 transitions  5 gems  5 rooms  novelty 0.61
+  episode 4/28:  256 transitions  2 gems  2 rooms  novelty 0.34
+  episode 5/28:  256 transitions  6 gems  4 rooms  novelty 0.64
+  episode 6/28:  256 transitions  4 gems  3 rooms  novelty 0.58
+  episode 7/28:  256 transitions  4 gems  3 rooms  novelty 0.51
+  episode 8/28:  256 transitions  2 gems  6 rooms  novelty 0.62
+  episode 9/28:  256 transitions  3 gems  2 rooms  novelty 0.53
+  episode 10/28:  256 transitions  4 gems  4 rooms  novelty 0.52
+  episode 11/28:  256 transitions  8 gems  5 rooms  novelty 0.60
+  episode 12/28:  256 transitions  5 gems  3 rooms  novelty 0.46
+  episode 13/28:  256 transitions  3 gems  3 rooms  novelty 0.52
+  episode 14/28:  256 transitions  4 gems  2 rooms  novelty 0.45
+  episode 15/28:  256 transitions  4 gems  2 rooms  novelty 0.54
+  episode 16/28:  256 transitions  4 gems  4 rooms  novelty 0.55
+  episode 17/28:  256 transitions  3 gems  2 rooms  novelty 0.54
+  episode 18/28:  256 transitions  5 gems  3 rooms  novelty 0.49
+  episode 19/28:  256 transitions  2 gems  4 rooms  novelty 0.58
+  episode 20/28:  256 transitions  4 gems  3 rooms  novelty 0.50
+  episode 21/28:  256 transitions  5 gems  4 rooms  novelty 0.61
+  episode 22/28:  256 transitions  4 gems  3 rooms  novelty 0.45
+  episode 23/28:  256 transitions  3 gems  4 rooms  novelty 0.61
+  episode 24/28:  256 transitions  4 gems  3 rooms  novelty 0.51
+  episode 25/28:  256 transitions  3 gems  3 rooms  novelty 0.42
+  episode 26/28:  256 transitions  2 gems  4 rooms  novelty 0.57
+  episode 27/28:  256 transitions  4 gems  4 rooms  novelty 0.58
+  episode 28/28:  256 transitions  3 gems  4 rooms  novelty 0.54
+collecting 6 validation episodes
+  episode 1/6:  256 transitions  3 gems  5 rooms  novelty 0.53
+  episode 2/6:  256 transitions  0 gems  5 rooms  novelty 0.47
+  episode 3/6:  256 transitions  2 gems  4 rooms  novelty 0.53
+  episode 4/6:  256 transitions  3 gems  4 rooms  novelty 0.55
+  episode 5/6:  256 transitions  3 gems  5 rooms  novelty 0.47
+  episode 6/6:  256 transitions  1 gems  2 rooms  novelty 0.43
+label stats: {
+  "transitions": 7029,
+  "gem_rate": 0.015507184521269028,
+  "room_change_rate": 0.011239152084222506,
+  "moved_rate": 0.8086498790724143,
+  "death_rate": 0.020059752454118653
+}
+trainable params: 1.68M
+[L1 1/30] loss 4.1181 tile 0.823 changed 0.152 gem_rec 0.629/prec 0.732 | val changed 0.283 gem_rec 0.062  (30s)
+[L1 2/30] loss 1.7079 tile 0.855 changed 0.290 gem_rec 0.976/prec 0.980 | val changed 0.341 gem_rec 0.271  (28s)
+[L1 3/30] loss 1.0342 tile 0.888 changed 0.454 gem_rec 0.995/prec 0.991 | val changed 0.473 gem_rec 0.250  (28s)
+[L1 4/30] loss 0.8000 tile 0.922 changed 0.628 gem_rec 0.998/prec 0.995 | val changed 0.559 gem_rec 0.167  (24s)
+[L1 5/30] loss 0.6607 tile 0.946 changed 0.736 gem_rec 0.999/prec 0.998 | val changed 0.621 gem_rec 0.250  (23s)
+[L1 6/30] loss 0.5964 tile 0.954 changed 0.785 gem_rec 0.999/prec 0.997 | val changed 0.693 gem_rec 0.250  (26s)
+[L1 7/30] loss 0.5461 tile 0.958 changed 0.802 gem_rec 1.000/prec 1.000 | val changed 0.715 gem_rec 0.229  (14s)
+[L1 8/30] loss 0.5131 tile 0.964 changed 0.832 gem_rec 1.000/prec 0.999 | val changed 0.742 gem_rec 0.229  (14s)
+[L1 9/30] loss 0.4867 tile 0.968 changed 0.850 gem_rec 0.999/prec 0.999 | val changed 0.744 gem_rec 0.229  (14s)
+[L1 10/30] loss 0.4643 tile 0.970 changed 0.864 gem_rec 1.000/prec 1.000 | val changed 0.791 gem_rec 0.229  (14s)
+[L1 11/30] loss 0.4475 tile 0.972 changed 0.879 gem_rec 1.000/prec 0.999 | val changed 0.795 gem_rec 0.229  (14s)
+[L1 12/30] loss 0.4298 tile 0.976 changed 0.895 gem_rec 1.000/prec 1.000 | val changed 0.802 gem_rec 0.271  (14s)
+[L1 13/30] loss 0.4251 tile 0.976 changed 0.903 gem_rec 1.000/prec 1.000 | val changed 0.803 gem_rec 0.229  (14s)
+[L1 14/30] loss 0.4141 tile 0.979 changed 0.912 gem_rec 0.999/prec 0.999 | val changed 0.826 gem_rec 0.229  (14s)
+[L1 15/30] loss 0.4005 tile 0.980 changed 0.916 gem_rec 1.000/prec 1.000 | val changed 0.806 gem_rec 0.229  (26s)
+[L1 16/30] loss 0.3929 tile 0.981 changed 0.921 gem_rec 1.000/prec 1.000 | val changed 0.830 gem_rec 0.208  (27s)
+[L1 17/30] loss 0.3920 tile 0.981 changed 0.920 gem_rec 1.000/prec 1.000 | val changed 0.834 gem_rec 0.208  (23s)
+[L1 18/30] loss 0.3817 tile 0.982 changed 0.924 gem_rec 1.000/prec 1.000 | val changed 0.828 gem_rec 0.208  (24s)
+[L1 19/30] loss 0.3722 tile 0.984 changed 0.936 gem_rec 1.000/prec 1.000 | val changed 0.848 gem_rec 0.208  (29s)
+[L1 20/30] loss 0.3666 tile 0.985 changed 0.939 gem_rec 1.000/prec 1.000 | val changed 0.852 gem_rec 0.208  (30s)
+[L1 21/30] loss 0.3646 tile 0.985 changed 0.938 gem_rec 1.000/prec 1.000 | val changed 0.854 gem_rec 0.208  (24s)
+[L1 22/30] loss 0.3583 tile 0.986 changed 0.945 gem_rec 1.000/prec 1.000 | val changed 0.856 gem_rec 0.229  (23s)
+[L1 23/30] loss 0.3568 tile 0.986 changed 0.947 gem_rec 1.000/prec 1.000 | val changed 0.857 gem_rec 0.229  (27s)
+[L1 24/30] loss 0.3501 tile 0.988 changed 0.952 gem_rec 1.000/prec 1.000 | val changed 0.865 gem_rec 0.208  (33s)
+[L1 25/30] loss 0.3498 tile 0.988 changed 0.953 gem_rec 1.000/prec 1.000 | val changed 0.873 gem_rec 0.208  (29s)
+[L1 26/30] loss 0.3495 tile 0.988 changed 0.954 gem_rec 1.000/prec 1.000 | val changed 0.859 gem_rec 0.208  (27s)
+[L1 27/30] loss 0.3484 tile 0.988 changed 0.955 gem_rec 1.000/prec 1.000 | val changed 0.866 gem_rec 0.208  (29s)
+[L1 28/30] loss 0.3439 tile 0.989 changed 0.957 gem_rec 1.000/prec 1.000 | val changed 0.874 gem_rec 0.208  (30s)
+[L1 29/30] loss 0.3442 tile 0.989 changed 0.959 gem_rec 1.000/prec 1.000 | val changed 0.871 gem_rec 0.208  (27s)
+[L1 30/30] loss 0.3463 tile 0.988 changed 0.956 gem_rec 1.000/prec 1.000 | val changed 0.869 gem_rec 0.208  (18s)
+[L2 1/8] pred 0.4978 var 0.3971
+[L2 2/8] pred 0.3564 var 0.3586
+[L2 3/8] pred 0.3034 var 0.3484
+[L2 4/8] pred 0.2847 var 0.3405
+[L2 5/8] pred 0.2714 var 0.3310
+[L2 6/8] pred 0.2566 var 0.3221
+[L2 7/8] pred 0.2415 var 0.3162
+[L2 8/8] pred 0.2265 var 0.3065
+
+saved runs\demo\final.pt  and  runs\demo\report.json

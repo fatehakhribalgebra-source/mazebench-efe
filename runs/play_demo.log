@@ -1,0 +1,23 @@
+[efe  ep0] gems 5  rooms 4  states 106  novelty 0.707  deaths 0  blocked 0.07
+[rand ep0] gems 2  rooms 2  states 24  novelty 0.160
+[efe  ep1] gems 1  rooms 1  states 4  novelty 0.027  deaths 0  blocked 0.98
+[rand ep1] gems 2  rooms 1  states 26  novelty 0.173
+[efe  ep2] gems 6  rooms 4  states 93  novelty 0.620  deaths 0  blocked 0.14
+[rand ep2] gems 2  rooms 2  states 37  novelty 0.247
+
+====================================================================
+metric                          EFE agent         random
+--------------------------------------------------------------------
+gems                                4.000          2.000
+rooms_visited                       3.000          1.667
+unique_board_states                67.667         29.000
+state_novelty_rate                  0.451          0.193
+novel_block_positions               1.333          1.000
+deaths                              0.000          5.000
+blocked_move_rate                   0.399          0.132
+total                               4.267          2.117
+====================================================================
+episodes: 3, max_actions: 150, engine: mock, exploit: 1.0
+
+replay: runs\play_demo\replay.html
+results: runs\play_demo\results.json

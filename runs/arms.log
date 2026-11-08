@@ -1,0 +1,32 @@
+[random         ep0] gems   0  rooms  1  states   19  novelty 0.158  deaths  0
+[memoryless     ep0] gems   0  rooms  1  states    2  novelty 0.017  deaths  0
+[full           ep0] gems   0  rooms  1  states   63  novelty 0.525  deaths  0
+[random         ep1] gems   0  rooms  1  states   17  novelty 0.142  deaths  0
+[memoryless     ep1] gems   0  rooms  1  states    3  novelty 0.025  deaths  0
+[full           ep1] gems   0  rooms  1  states   44  novelty 0.367  deaths  0
+[random         ep2] gems   0  rooms  1  states   17  novelty 0.142  deaths  0
+[memoryless     ep2] gems   0  rooms  1  states    6  novelty 0.050  deaths  0
+[full           ep2] gems   0  rooms  1  states   58  novelty 0.483  deaths  0
+[random         ep3] gems   0  rooms  1  states   25  novelty 0.208  deaths  0
+[memoryless     ep3] gems   0  rooms  1  states    6  novelty 0.050  deaths  0
+[full           ep3] gems   0  rooms  1  states   47  novelty 0.392  deaths  0
+[random         ep4] gems   0  rooms  1  states   17  novelty 0.142  deaths  0
+[memoryless     ep4] gems   0  rooms  1  states    3  novelty 0.025  deaths  0
+[full           ep4] gems   0  rooms  1  states   59  novelty 0.492  deaths  0
+
+==============================================================
+metric                                  random          memoryless                full
+--------------------------------------------------------------------------------------
+gems                                0.00±0.00           0.00±0.00           0.00±0.00 
+rooms_visited                       1.00±0.00           1.00±0.00           1.00±0.00 
+unique_board_states                19.00±1.55           4.00±0.84          54.20±3.68 
+state_novelty_rate                  0.16±0.01           0.03±0.01           0.45±0.03 
+novel_block_positions               0.00±0.00           0.00±0.00           0.00±0.00 
+deaths                              0.00±0.00           0.00±0.00           0.00±0.00 
+blocked_move_rate                   0.18±0.03           0.10±0.06           0.17±0.03 
+total                               0.00±0.00           0.00±0.00           0.00±0.00 
+======================================================================================
+5 episodes/arm on shared seeds, 120 actions, engine=mock +real-levels, exploit=1.0
+
+replay: runs\arms\replay.html
+results: runs\arms\results.json

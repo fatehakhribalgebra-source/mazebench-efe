@@ -1,0 +1,689 @@
+<title>MazeBench Free-Energy Agent</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: single measured column of running text; figures break out to a wider
+     plate width, each with a rule, a number and a caption, as in a preprint. */
+  :root {
+    --paper:   #f4f5f3;
+    --plate:   #ffffff;
+    --ink:     #15181c;
+    --ink-soft:#575d65;
+    --rule:    #d6dad5;
+    --risk:    #9a3d2e;   /* pragmatic / risk terms */
+    --amb:     #8a6d1f;   /* ambiguity */
+    --epi:     #1b6b67;   /* epistemic / information gain */
+    --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --body:    "Source Serif 4", Georgia, "Times New Roman", serif;
+    --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:#14161a; --plate:#1b1e23; --ink:#e7e9e5; --ink-soft:#9ba1a9;
+      --rule:#2f343a; --risk:#dc8470; --amb:#d0ab52; --epi:#5fc3bb;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:#14161a; --plate:#1b1e23; --ink:#e7e9e5; --ink-soft:#9ba1a9;
+    --rule:#2f343a; --risk:#dc8470; --amb:#d0ab52; --epi:#5fc3bb;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.62;
+    margin: 0;
+  }
+  .sheet {
+    max-width: 880px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 48px 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .col { max-width: 34em; display: flex; flex-direction: column; gap: 1em; }
+  p { margin: 0; }
+  a { color: var(--epi); text-underline-offset: 2px; }
+
+  /* --- masthead --- */
+  .mast { display: flex; flex-direction: column; gap: 14px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  h1 {
+    font-family: var(--display); font-weight: 700; font-size: clamp(30px, 6vw, 44px);
+    line-height: 1.06; letter-spacing: -0.02em; margin: 0; text-wrap: balance;
+  }
+  .standfirst {
+    font-size: 19px; color: var(--ink-soft); max-width: 32em; margin: 0;
+    font-style: italic;
+  }
+  .byline {
+    font-family: var(--mono); font-size: 12px; color: var(--ink-soft);
+    display: flex; flex-wrap: wrap; gap: 6px 22px; padding-top: 10px;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* --- sections --- */
+  h2 {
+    font-family: var(--display); font-weight: 600; font-size: 13px;
+    letter-spacing: 0.1em; text-transform: uppercase; margin: 0;
+    color: var(--ink); display: flex; gap: 12px; align-items: baseline;
+  }
+  h2 .num { color: var(--epi); font-variant-numeric: tabular-nums; }
+  section { display: flex; flex-direction: column; gap: 16px; }
+  h3 {
+    font-family: var(--display); font-weight: 600; font-size: 16px;
+    margin: 0; letter-spacing: -0.01em;
+  }
+  code, .m { font-family: var(--mono); font-size: 0.86em; }
+  code { background: var(--plate); padding: 0.1em 0.34em; border-radius: 2px; border: 1px solid var(--rule); }
+
+  /* --- figure plates --- */
+  figure {
+    margin: 10px 0; display: flex; flex-direction: column; gap: 12px;
+    border-top: 2px solid var(--ink); padding-top: 14px;
+  }
+  .plate {
+    background: var(--plate); border: 1px solid var(--rule); border-radius: 2px;
+    padding: 16px; overflow-x: auto;
+  }
+  .plate svg { display: block; width: 100%; height: auto; min-width: 560px; }
+  figcaption {
+    font-size: 14.5px; color: var(--ink-soft); line-height: 1.5;
+    border-top: 1px solid var(--rule); padding-top: 10px; max-width: 46em;
+  }
+  figcaption b {
+    font-family: var(--display); font-weight: 600; font-size: 12px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);
+    margin-right: 8px;
+  }
+
+  /* --- equation --- */
+  .eq {
+    font-family: var(--body); font-size: clamp(17px, 3.6vw, 23px);
+    text-align: center; padding: 22px 8px; line-height: 1.9;
+  }
+  .eq .t-risk { color: var(--risk); }
+  .eq .t-amb  { color: var(--amb); }
+  .eq .t-epi  { color: var(--epi); }
+  .eq i { font-family: var(--body); }
+  .eq sub, .eq sup { font-size: 0.62em; }
+
+  /* --- term columns --- */
+  .terms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); }
+  .term { background: var(--plate); padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .term > h4 {
+    font-family: var(--display); font-size: 12px; letter-spacing: 0.08em;
+    text-transform: uppercase; margin: 0; display: flex; align-items: center; gap: 8px;
+  }
+  .swatch { width: 10px; height: 10px; border-radius: 1px; flex: none; }
+  .term dl { margin: 0; display: grid; grid-template-columns: 1fr auto; gap: 5px 10px; font-size: 13.5px; }
+  .term dt { font-family: var(--body); color: var(--ink); min-width: 0; }
+  .term dd { margin: 0; font-family: var(--mono); font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+  .term p { font-size: 13px; color: var(--ink-soft); font-style: italic; }
+  @media (max-width: 680px) { .terms { grid-template-columns: 1fr; } }
+
+  /* --- tables --- */
+  .tw { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 14.5px; min-width: 460px; }
+  caption {
+    text-align: left; font-size: 14.5px; color: var(--ink-soft);
+    padding-bottom: 10px; border-top: 2px solid var(--ink); padding-top: 14px; margin-top: 10px;
+  }
+  caption b {
+    font-family: var(--display); font-weight: 600; font-size: 12px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin-right: 8px;
+  }
+  th, td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--rule); font-variant-numeric: tabular-nums; }
+  th:first-child, td:first-child { text-align: left; font-variant-numeric: normal; }
+  thead th {
+    font-family: var(--display); font-weight: 600; font-size: 11.5px;
+    letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-soft);
+    border-bottom: 1px solid var(--ink);
+  }
+  tbody tr:last-child td { border-bottom: 1px solid var(--ink); }
+  td .big { font-family: var(--mono); font-weight: 500; }
+
+  /* --- ascii imagination panels --- */
+  .frames { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1px; background: var(--rule); }
+  .frame { background: var(--plate); padding: 14px; display: flex; flex-direction: column; gap: 8px; align-items: center; min-width: 0; }
+  .frame .t { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-soft); text-transform: uppercase; }
+  .grid { font-family: var(--mono); font-size: clamp(11px, 2.6vw, 14px); line-height: 1.45; white-space: pre; }
+  .grid .p { color: var(--epi); font-weight: 500; }
+  .grid .g { color: var(--amb); font-weight: 500; }
+  .grid .b { color: var(--risk); font-weight: 500; }
+  .grid .w { color: var(--rule); }
+  .frame .k { font-family: var(--mono); font-size: 10.5px; color: var(--ink-soft); }
+  @media (max-width: 560px) { .frames { grid-template-columns: 1fr; } }
+
+  /* --- status note --- */
+  .note {
+    border-left: 3px solid var(--risk); background: var(--plate);
+    padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .note h3 { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .note ul { margin: 0; padding-left: 1.1em; font-size: 14.5px; display: flex; flex-direction: column; gap: 6px; }
+
+  ul.plain { margin: 0; padding-left: 1.15em; display: flex; flex-direction: column; gap: 7px; }
+  .foot { font-family: var(--mono); font-size: 11.5px; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 14px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="sheet">
+
+  <header class="mast">
+    <div class="eyebrow">Technical note · Active inference on a sparse grid benchmark</div>
+    <h1>Playing MazeBench by minimising expected free energy</h1>
+    <p class="standfirst">An agent with no reward function: it imagines short futures in the
+      latent space of a hierarchical world model and takes the action whose futures are least
+      surprising and most informative.</p>
+    <div class="byline">
+      <span>9 November 2026</span>
+      <span>~6,000 lines Python · 47 tests</span>
+      <span>Status: pre-training</span>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="num">1</span> What the benchmark asks for</h2>
+    <div class="col">
+      <p><a href="https://mazebench.com/">MazeBench</a> is a 16&nbsp;×&nbsp;16 grid of hand-built
+        rooms, each itself 16&nbsp;×&nbsp;16 tiles, played through an ASCII view and eight
+        keys. Gems are the score. The agent sees one room at a time and is told nothing
+        about where it is in the world.</p>
+      <p>Three properties make it hard in a way that defeats ordinary reinforcement
+        learning. The reward is almost absent: <b>90 gems exist across 256 rooms</b>, so a
+        random walk of a few hundred steps collects nothing and learns nothing from it.
+        The glyph alphabet is permuted between runs, so a wall is not reliably
+        <code>#</code>. And the published win condition asks for 100 gems from a world that
+        contains 90 &mdash; consistent with the best reported scores sitting around 10&nbsp;%.</p>
+      <p>With no usable reward gradient, the agent needs an objective that rewards
+        <i>finding out</i> as well as <i>getting</i>. That objective is expected free
+        energy.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span> The loop</h2>
+    <figure>
+      <div class="plate">
+        <svg viewBox="0 0 840 400" role="img" aria-label="Block diagram of the agent loop: engine, observation firewall, encoder, hierarchy, planner, expected free energy, action.">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-soft)"></path>
+            </marker>
+            <marker id="ahq" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--rule)"></path>
+            </marker>
+          </defs>
+          <g font-family="Archivo, sans-serif" font-size="13.5" font-weight="600" fill="var(--ink)" text-anchor="middle">
+            <rect x="330" y="16" width="200" height="50" rx="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"></rect>
+            <text x="430" y="37">MazeBench engine</text>
+            <text x="430" y="54" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="400" fill="var(--ink-soft)">ASCII board + scorecard</text>
+
+            <rect x="40" y="110" width="250" height="58" rx="3" fill="var(--paper)" stroke="var(--epi)" stroke-width="1.6" stroke-dasharray="5 4"></rect>
+            <text x="165" y="134" fill="var(--epi)">observation firewall</text>
+            <text x="165" y="152" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="400" fill="var(--ink-soft)">board + legend only</text>
+
+            <rect x="330" y="110" width="200" height="58" rx="3" fill="none" stroke="var(--rule)" stroke-width="1.4" stroke-dasharray="3 4"></rect>
+            <text x="430" y="134" fill="var(--ink-soft)">evaluator only</text>
+            <text x="430" y="152" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="400" fill="var(--rule)">coords · gem ids · hash</text>
+
+            <rect x="40" y="212" width="250" height="58" rx="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"></rect>
+            <text x="165" y="236">glyph encoder</text>
+            <text x="165" y="254" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="400" fill="var(--ink-soft)">z : 64 × 31 × 31</text>
+
+            <rect x="330" y="212" width="200" height="58" rx="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"></rect>
+            <text x="430" y="236">latent hierarchy</text>
+            <text x="430" y="254" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="400" fill="var(--ink-soft)">L1 + L2 … L4, ×5 ensemble</text>
+
+            <rect x="570" y="212" width="230" height="58" rx="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"></rect>
+            <text x="685" y="236">CEM planner</text>
+            <text x="685" y="254" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="400" fill="var(--ink-soft)">256 seqs × 8 steps, 4 iters</text>
+
+            <rect x="570" y="318" width="230" height="58" rx="3" fill="var(--paper)" stroke="var(--epi)" stroke-width="1.8"></rect>
+            <text x="685" y="342" fill="var(--epi)">expected free energy</text>
+            <text x="685" y="360" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="400" fill="var(--ink-soft)">risk + ambiguity − info gain</text>
+
+            <rect x="300" y="318" width="230" height="58" rx="3" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"></rect>
+            <text x="415" y="342">episodic memory</text>
+            <text x="415" y="360" font-family="IBM Plex Mono, monospace" font-size="10.5" font-weight="400" fill="var(--ink-soft)">cell · pattern · box counts</text>
+          </g>
+          <g stroke="var(--ink-soft)" stroke-width="1.4" fill="none" marker-end="url(#ah)">
+            <path d="M330 41 H165 V103"></path>
+            <path d="M165 168 V205"></path>
+            <path d="M290 241 H323"></path>
+            <path d="M530 241 H563"></path>
+            <path d="M685 270 V311"></path>
+            <path d="M530 347 H563"></path>
+            <path d="M800 347 H826 V41 H537"></path>
+          </g>
+          <path d="M290 139 H323" stroke="var(--rule)" stroke-width="1.4" fill="none" marker-end="url(#ahq)"></path>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-soft)">
+            <text x="250" y="33" text-anchor="middle">observation</text>
+            <text x="672" y="33" text-anchor="end">argmin G(π) → one action</text>
+            <text x="547" y="340" text-anchor="start" opacity="0">novelty</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><b>Figure 1</b> The agent loop. Everything the policy may read passes the
+        firewall on the left; the evaluator's own fields &mdash; player coordinates, gem
+        identifiers, the board hash, push counters &mdash; branch off to the right and are
+        never visible to the model or the planner. A dedicated test asserts this, because an
+        exploration result computed from privileged coordinates measures nothing.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span> The objective</h2>
+    <div class="col">
+      <p>Expected free energy scores a candidate plan rather than a state. It asks: if I
+        followed this plan, how far would the futures I expect sit from the futures I
+        prefer, how uncertain would my observations be, and how much would I learn?
+        The agent takes the first action of the plan that scores lowest, then replans.</p>
+    </div>
+
+    <figure>
+      <div class="plate">
+        <div class="eq">
+          <i>G</i>(&pi;) &nbsp;=&nbsp; &sum;<sub>t</sub> &gamma;<sup>t</sup>
+          [ <span class="t-risk">risk<sub>t</sub></span>
+          &nbsp;+&nbsp; <span class="t-amb">ambiguity<sub>t</sub></span>
+          &nbsp;&minus;&nbsp; <span class="t-epi">information gain<sub>t</sub></span> ]
+        </div>
+        <div class="terms">
+          <div class="term">
+            <h4><span class="swatch" style="background:var(--risk)"></span>Risk</h4>
+            <p>Distance from preferred outcomes, read off the model's outcome heads.</p>
+            <dl>
+              <dt>gem collected</dt><dd>&minus;10.0</dd>
+              <dt>step toward a visible gem</dt><dd>&minus;1.0</dd>
+              <dt>entering a new room</dt><dd>&minus;2.0</dd>
+              <dt>novel box layout</dt><dd>&minus;0.5</dd>
+              <dt>death</dt><dd>+20.0</dd>
+              <dt>near a hazard</dt><dd>+0.3</dd>
+            </dl>
+          </div>
+          <div class="term">
+            <h4><span class="swatch" style="background:var(--amb)"></span>Ambiguity</h4>
+            <p>Expected observation entropy &mdash; states whose appearance the model cannot
+              pin down, independent of how much there is to learn there.</p>
+            <dl>
+              <dt>predictive entropy</dt><dd>0.5</dd>
+            </dl>
+          </div>
+          <div class="term">
+            <h4><span class="swatch" style="background:var(--epi)"></span>Information gain</h4>
+            <p>The only term that is subtracted, so it is the only reason to walk into the
+              unknown. Ensemble disagreement is parameter information gain; the count terms
+              are state novelty.</p>
+            <dl>
+              <dt>ensemble disagreement</dt><dd>2.0</dd>
+              <dt>unvisited cell</dt><dd>3.0</dd>
+              <dt>unseen local pattern</dt><dd>2.0</dd>
+              <dt>unseen abstract state</dt><dd>1.0</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <figcaption><b>Figure 2</b> The three terms and their weights, with sign as the code
+        applies it: negative entries are preferred outcomes that lower <i>G</i>, positive
+        entries are penalties. Horizon 8 primitive steps, discount 0.95. Ensemble
+        disagreement is the <i>Plan2Explore</i> estimator &mdash; five predictors trained on
+        bootstrapped data, and their spread over an imagined latent is a proxy for how much
+        the agent would learn by actually going there.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span> The world model</h2>
+    <div class="col">
+      <p>Planning needs a model to plan in, and pixel or glyph prediction is the wrong
+        target: a grid world is mostly static, so a predictor that outputs "nothing moved"
+        scores about 99&nbsp;% on raw tiles while being useless. The model is therefore a
+        JEPA &mdash; it predicts in representation space, and is scored only on the tiles
+        that actually changed.</p>
+      <p>The encoder maps the egocentric window to <span class="m">z</span> of shape
+        <span class="m">(64, 31, 31)</span>: one feature vector per tile. The window is 31
+        wide because the engine's camera frames a whole 16-tile room, and 2·16&minus;1 is
+        what it takes to cover a room from any corner. Collapse is prevented the usual way,
+        with VICReg variance and covariance terms against an EMA target encoder; on the
+        trained checkpoint latent variance sits at 0.15, well clear of zero.</p>
+      <p>On top of the primitive level sit <b>one, two or three abstract levels</b> &mdash; a
+        fixed stack of 2, 3 or 4 in total, as in H-JEPA, not an arbitrary depth. Each level
+        consumes chunks of four states from the level below, so strides multiply
+        geometrically and the planner's effective lookahead grows with depth while the
+        number of rollout steps it pays for stays at eight.</p>
+    </div>
+
+    <figure>
+      <div class="plate">
+        <svg viewBox="0 0 840 252" role="img" aria-label="Four rows of markers showing predictor stride 1, 4, 16 and 64 over a 64-step timeline.">
+          <g stroke="var(--rule)" stroke-width="1">
+            <line x1="112" y1="56" x2="792" y2="56"></line>
+            <line x1="112" y1="106" x2="792" y2="106"></line>
+            <line x1="112" y1="156" x2="792" y2="156"></line>
+            <line x1="112" y1="206" x2="792" y2="206"></line>
+          </g>
+          <line x1="112" y1="56" x2="792" y2="56" stroke="var(--ink-soft)" stroke-width="11" stroke-dasharray="2 8.625" stroke-linecap="butt"></line>
+          <g fill="var(--epi)">
+            <circle cx="112" cy="106" r="3.6"></circle><circle cx="154.5" cy="106" r="3.6"></circle>
+            <circle cx="197" cy="106" r="3.6"></circle><circle cx="239.5" cy="106" r="3.6"></circle>
+            <circle cx="282" cy="106" r="3.6"></circle><circle cx="324.5" cy="106" r="3.6"></circle>
+            <circle cx="367" cy="106" r="3.6"></circle><circle cx="409.5" cy="106" r="3.6"></circle>
+            <circle cx="452" cy="106" r="3.6"></circle><circle cx="494.5" cy="106" r="3.6"></circle>
+            <circle cx="537" cy="106" r="3.6"></circle><circle cx="579.5" cy="106" r="3.6"></circle>
+            <circle cx="622" cy="106" r="3.6"></circle><circle cx="664.5" cy="106" r="3.6"></circle>
+            <circle cx="707" cy="106" r="3.6"></circle><circle cx="749.5" cy="106" r="3.6"></circle>
+            <circle cx="792" cy="106" r="3.6"></circle>
+            <circle cx="112" cy="156" r="5.4"></circle><circle cx="282" cy="156" r="5.4"></circle>
+            <circle cx="452" cy="156" r="5.4"></circle><circle cx="622" cy="156" r="5.4"></circle>
+            <circle cx="792" cy="156" r="5.4"></circle>
+            <circle cx="112" cy="206" r="7"></circle><circle cx="792" cy="206" r="7"></circle>
+          </g>
+          <g font-family="Archivo, sans-serif" font-size="12.5" font-weight="600" fill="var(--ink)" text-anchor="end">
+            <text x="100" y="52">L1</text>
+            <text x="100" y="102">L2</text>
+            <text x="100" y="152">L3</text>
+            <text x="100" y="202">L4</text>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="end">
+            <text x="100" y="66">stride 1</text>
+            <text x="100" y="116">stride 4</text>
+            <text x="100" y="166">stride 16</text>
+            <text x="100" y="216">stride 64</text>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-soft)" text-anchor="middle">
+            <text x="112" y="238">step 0</text>
+            <text x="282" y="238">16</text>
+            <text x="452" y="238">32</text>
+            <text x="622" y="238">48</text>
+            <text x="792" y="238">64</text>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-soft)" text-anchor="start">
+            <text x="112" y="24">one predictor step at each level, over the same 64 primitive actions</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><b>Figure 3</b> Temporal abstraction. Each marker is one step of that
+        level's predictor. A depth-2 model plans 8 primitive steps and values the terminal
+        state 16 steps out; adding L3 pushes that to 80, and L4 to 336 &mdash; room-scale,
+        then world-scale lookahead, at the same rollout cost. Whether the deeper stacks
+        actually help is an open question here, and the one the depth experiment is for.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span> Imagination, and the box on the gem</h2>
+    <div class="col">
+      <p>The planner is a cross-entropy method over discrete action sequences: sample 256
+        sequences of 8 actions from a per-step categorical, roll each one forward through
+        the latent predictor, score it with <i>G</i>, refit the categorical on the best 32,
+        repeat four times. Nothing touches the engine &mdash; the whole search happens on
+        imagined latents, and the previous plan is carried forward as a prior so the agent
+        commits to a direction instead of dithering.</p>
+      <p>Because the rollouts are imagined, the agent can be rewarded for configurations it
+        has never observed. The box-layout term hashes the pushable-block mask with a Zobrist
+        key, so a plan that ends with a block somewhere no block has ever been scores as
+        novel &mdash; including the case of a block pushed onto a gem.</p>
+    </div>
+
+    <figure>
+      <div class="plate">
+        <div class="frames">
+          <div class="frame">
+            <div class="t">imagined t</div>
+<div class="grid"><span class="w">#######</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#</span><span class="p">P</span><span class="b">b</span>.<span class="g">G</span>.<span class="w">#</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#######</span></div>
+            <div class="k">layout key 4c1f… · seen 41×</div>
+          </div>
+          <div class="frame">
+            <div class="t">imagined t + 1</div>
+<div class="grid"><span class="w">#######</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#</span>.<span class="p">P</span><span class="b">b</span><span class="g">G</span>.<span class="w">#</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#######</span></div>
+            <div class="k">layout key 9a07… · seen 0×</div>
+          </div>
+          <div class="frame">
+            <div class="t">imagined t + 2</div>
+<div class="grid"><span class="w">#######</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#</span>..<span class="p">P</span><span class="b">b</span>.<span class="w">#</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#</span>.....<span class="w">#</span>
+<span class="w">#######</span></div>
+            <div class="k">layout key e3d8… · seen 0×</div>
+          </div>
+        </div>
+      </div>
+      <figcaption><b>Figure 4</b> Schematic of one imagined rollout, drawn to show the term
+        rather than taken from a checkpoint. The agent plans two pushes that end with the
+        block standing where the gem was. Each push changes the Zobrist key of the block
+        mask, and an unseen key lowers <i>G</i> &mdash; so the agent is paid to rearrange the
+        room, not only to walk through it. The replay viewer renders the real decoded
+        rollouts in the same form, beside the term-by-term <i>G</i> for the action
+        chosen.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span> What is measured, and against what</h2>
+    <div class="col">
+      <p>An exploration claim is only as good as its control, so the same agent runs in four
+        configurations on shared seeds. <b>Full</b> is everything. <b>No-epistemic</b> deletes
+        the information-gain term, leaving a planner that only chases preferred outcomes.
+        <b>Memoryless</b> keeps the term but wipes the visit counts, so novelty is undefined.
+        <b>Random</b> is a uniform action policy. If the full arm does not separate from these,
+        the free-energy machinery is decoration. The run below exercised three of the four;
+        the no-epistemic arm is implemented but waits on the trained model, since without a
+        working gem head a purely pragmatic planner has nothing to pursue.</p>
+      <p>It separates. Below, five episodes per arm from the benchmark's own start room,
+        which is the honest starting point and also one of the 170 rooms that contains no
+        gem &mdash; hence zero gems everywhere, and why the exploration metrics are the ones
+        that carry information at this stage.</p>
+    </div>
+
+    <figure>
+      <div class="plate">
+        <svg viewBox="0 0 840 300" role="img" aria-label="Bar charts comparing unique board states and state novelty rate across random, memoryless and full arms.">
+          <g stroke="var(--rule)" stroke-width="1">
+            <line x1="70" y1="250" x2="420" y2="250"></line>
+            <line x1="70" y1="183.3" x2="420" y2="183.3"></line>
+            <line x1="70" y1="116.7" x2="420" y2="116.7"></line>
+            <line x1="70" y1="50" x2="420" y2="50"></line>
+            <line x1="500" y1="250" x2="810" y2="250"></line>
+            <line x1="500" y1="150" x2="810" y2="150"></line>
+            <line x1="500" y1="50" x2="810" y2="50"></line>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-soft)" text-anchor="end">
+            <text x="62" y="254">0</text><text x="62" y="187.3">20</text>
+            <text x="62" y="120.7">40</text><text x="62" y="54">60</text>
+            <text x="492" y="254">0</text><text x="492" y="154">0.25</text><text x="492" y="54">0.50</text>
+          </g>
+          <g font-family="Archivo, sans-serif" font-size="12" font-weight="600" fill="var(--ink)">
+            <text x="70" y="30">unique board states / episode</text>
+            <text x="500" y="30">state novelty rate</text>
+          </g>
+          <rect x="96" y="186.7" width="64" height="63.3" fill="var(--ink-soft)" opacity="0.45"></rect>
+          <rect x="196" y="236.7" width="64" height="13.3" fill="var(--ink-soft)" opacity="0.45"></rect>
+          <rect x="296" y="69.3" width="64" height="180.7" fill="var(--epi)"></rect>
+          <rect x="524" y="186" width="64" height="64" fill="var(--ink-soft)" opacity="0.45"></rect>
+          <rect x="618" y="238" width="64" height="12" fill="var(--ink-soft)" opacity="0.45"></rect>
+          <rect x="712" y="70" width="64" height="180" fill="var(--epi)"></rect>
+          <g stroke="var(--ink)" stroke-width="1.3" fill="none">
+            <path d="M128 181.5 V191.9 M123 181.5 H133 M123 191.9 H133"></path>
+            <path d="M228 233.9 V239.5 M223 233.9 H233 M223 239.5 H233"></path>
+            <path d="M328 57 V81.6 M323 57 H333 M323 81.6 H333"></path>
+            <path d="M556 182 V190 M551 182 H561 M551 190 H561"></path>
+            <path d="M650 234 V242 M645 234 H655 M645 242 H655"></path>
+            <path d="M744 58 V82 M739 58 H749 M739 82 H749"></path>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="var(--ink)" text-anchor="middle">
+            <text x="128" y="174">19.0</text><text x="228" y="226">4.0</text><text x="328" y="48">54.2</text>
+            <text x="556" y="174">0.16</text><text x="650" y="226">0.03</text><text x="744" y="49">0.45</text>
+          </g>
+          <g font-family="Archivo, sans-serif" font-size="11.5" font-weight="500" fill="var(--ink-soft)" text-anchor="middle">
+            <text x="128" y="270">random</text><text x="228" y="270">memoryless</text>
+            <text x="328" y="270" fill="var(--epi)" font-weight="600">full</text>
+            <text x="556" y="270">random</text><text x="650" y="270">memoryless</text>
+            <text x="744" y="270" fill="var(--epi)" font-weight="600">full</text>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-soft)" text-anchor="middle">
+            <text x="240" y="290">mean ± s.e., 5 episodes/arm, 120 actions, shared seeds</text>
+            <text x="655" y="290">novel states as a fraction of actions taken</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><b>Figure 5</b> The ablation ladder. The full agent visits 54.2 ± 3.7
+        distinct board states where a random policy manages 19.0 ± 1.6. Stripping the visit
+        counts is worse than random &mdash; 4.0 ± 0.8 &mdash; because a planner with an
+        undefined novelty term finds a locally comfortable spot and oscillates there. That
+        the memoryless arm fails this badly is the clearest evidence that the exploration is
+        coming from the objective and not from the planner's own noise.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2><span class="num">7</span> Where training stands</h2>
+    <div class="col">
+      <p>One model has been trained end to end, on a deliberately small buffer, to check
+        that the losses move in the right direction before the real run. They do, for the
+        parts with data behind them.</p>
+    </div>
+
+    <figure>
+      <div class="plate">
+        <svg viewBox="0 0 840 300" role="img" aria-label="Held-out learning curves over 30 epochs: changed-tile accuracy rises to 0.87 while gem recall plateaus near 0.21.">
+          <g stroke="var(--rule)" stroke-width="1">
+            <line x1="72" y1="252" x2="812" y2="252"></line>
+            <line x1="72" y1="200" x2="812" y2="200"></line>
+            <line x1="72" y1="148" x2="812" y2="148"></line>
+            <line x1="72" y1="96" x2="812" y2="96"></line>
+            <line x1="72" y1="44" x2="812" y2="44"></line>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-soft)" text-anchor="end">
+            <text x="64" y="256">0</text><text x="64" y="204">0.25</text>
+            <text x="64" y="152">0.50</text><text x="64" y="100">0.75</text><text x="64" y="48">1.00</text>
+          </g>
+          <polyline fill="none" stroke="var(--epi)" stroke-width="2.4" stroke-linejoin="round"
+            points="72.0,193.1 97.5,181.1 123.0,153.6 148.6,135.7 174.1,122.8 199.6,107.9 225.1,103.3 250.6,97.7 276.1,97.2 301.7,87.5 327.2,86.6 352.7,85.2 378.2,85.0 403.7,80.2 429.2,84.4 454.8,79.4 480.3,78.5 505.8,79.8 531.3,75.6 556.8,74.8 582.3,74.4 607.9,74.0 633.4,73.7 658.9,72.1 684.4,70.4 709.9,73.3 735.4,71.9 761.0,70.2 786.5,70.8 812.0,71.2"></polyline>
+          <polyline fill="none" stroke="var(--risk)" stroke-width="2.4" stroke-linejoin="round"
+            points="72.0,239.1 97.5,195.6 123.0,200.0 148.6,217.3 174.1,200.0 199.6,200.0 225.1,204.4 250.6,204.4 276.1,204.4 301.7,204.4 327.2,204.4 352.7,195.6 378.2,204.4 403.7,204.4 429.2,204.4 454.8,208.7 480.3,208.7 505.8,208.7 531.3,208.7 556.8,208.7 582.3,208.7 607.9,204.4 633.4,204.4 658.9,208.7 684.4,208.7 709.9,208.7 735.4,208.7 761.0,208.7 786.5,208.7 812.0,208.7"></polyline>
+          <g font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink)">
+            <text x="620" y="62" fill="var(--epi)">changed-tile accuracy  0.87</text>
+            <text x="620" y="226" fill="var(--risk)">gem recall  0.21</text>
+          </g>
+          <g font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-soft)" text-anchor="middle">
+            <text x="72" y="274">epoch 1</text><text x="301.7" y="274">10</text>
+            <text x="556.8" y="274">20</text><text x="812" y="274">30</text>
+            <text x="442" y="294">held-out episodes · 7,029 transitions · depth 2 · window 15</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption><b>Figure 6</b> Held-out curves from the pilot. The tile predictor learns
+        the dynamics: accuracy on the tiles that <i>changed</i> goes from 0.28 to 0.87, and
+        the level-2 predictor's loss falls from 0.50 to 0.23 with latent variance holding at
+        0.31, so the abstraction is not collapsing. The gem head is the failure: it plateaus
+        at 0.21 recall after four epochs and never recovers, because the pilot buffer
+        contained 109 gem events in 7,029 transitions.</figcaption>
+    </figure>
+
+    <div class="col">
+      <p>That diagnosis is what the overnight collection was for. A coverage policy &mdash;
+        breadth-first search over the rendered board, with a blocked-move set and 22&nbsp;%
+        random actions to get camera rotations into the buffer &mdash; was run from the 86
+        gem-bearing rooms.</p>
+    </div>
+
+    <div class="tw">
+      <table>
+        <caption><b>Table 1</b> The collected buffer against the pilot. The room-change count
+          is the consequential one: at 79 events the room head had nothing to fit, which is
+          why early episodes never left the room they started in.</caption>
+        <thead>
+          <tr><th>Event</th><th>Pilot</th><th>Collected</th><th>Factor</th><th>Rate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>transitions</td><td>7,029</td><td class="big">179,139</td><td>25.5×</td><td>&mdash;</td></tr>
+          <tr><td>gem collected</td><td>109</td><td class="big">552</td><td>5.1×</td><td>0.31%</td></tr>
+          <tr><td>room change</td><td>79</td><td class="big">2,123</td><td>26.9×</td><td>1.19%</td></tr>
+          <tr><td>successful move</td><td>5,684</td><td class="big">148,592</td><td>26.1×</td><td>82.9%</td></tr>
+          <tr><td>death</td><td>141</td><td class="big">62</td><td>0.4×</td><td>0.03%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tw">
+      <table>
+        <caption><b>Table 2</b> The GPU schedule, in order. Each run answers one question and
+          nothing else.</caption>
+        <thead>
+          <tr><th>Run</th><th>Question</th><th>Key flags</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Baseline</td><td>Does the gem head learn given 552 events?</td><td class="m" style="text-align:left">--levels 2 --window 31 --real-levels</td></tr>
+          <tr><td>Ablation</td><td>Does the full arm still beat random and memoryless once trained?</td><td class="m" style="text-align:left">--arms random,memoryless,no_epistemic,full</td></tr>
+          <tr><td>Depth</td><td>Do 3 or 4 levels beat 2?</td><td class="m" style="text-align:left">--levels 2|3|4 --index-levels 4</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col">
+      <p>The depth comparison needs <code>--index-levels 4</code> for a reason worth stating:
+        indexed at its own deepest stride, a 4-level model draws 2,689 chunk samples from the
+        pilot buffer where a 2-level model draws 6,578. In an early comparison the deeper
+        model lost, and it lost at <i>level 2</i> &mdash; it was starved, not worse. Indexing
+        every depth as though it had four levels hands all three the same 2,689 samples, which
+        costs the shallow models data but makes the comparison mean something.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">8</span> What this is not yet</h2>
+    <div class="note">
+      <h3>Open, and load-bearing</h3>
+      <ul>
+        <li><b>The engine has never been run from this project.</b> Level geometry, gem and
+          block placement are parsed from the real level files, and room adjacency comes from
+          the shipped world map &mdash; but the dynamics stepping those rooms are a
+          reimplementation. Every number above is mock dynamics on real geometry, and none of
+          them is a MazeBench score.</li>
+        <li><b>Elevation is approximated.</b> A stacked <code>#</code> column is ground at
+          that height with a one-step climb rule, which is enough to keep the levels
+          traversable; ice, slopes, lifts, buttons and moving hazards are not modelled.</li>
+        <li><b>No gems in the ablation.</b> The benchmark's start room contains none, so the
+          ladder in Figure 5 compares exploration only. A gem-collecting comparison needs the
+          trained model and gem-bearing starts.</li>
+        <li><b>The transfer path is untested.</b> Frozen V-JEPA 2 and SigLIP 2 encoders are
+          wired in behind an adapter at pinned revisions, but no real frame has passed
+          through them &mdash; the ASCII view is what the benchmark gives, and pixels would
+          need a browser in the loop.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot">
+    mazebench_efe · EFE planning over a hierarchical latent world model ·
+    ~6,000 lines, 47 tests · figures 5 and 6 from runs/arms and runs/demo
+  </div>
+
+</div>

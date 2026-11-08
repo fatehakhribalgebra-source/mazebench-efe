@@ -1,0 +1,123 @@
+{
+  "args": {
+    "engine": "mock",
+    "repo_root": null,
+    "real_levels": true,
+    "node_bin": null,
+    "level": "level_HxI",
+    "view": "top-diagonal",
+    "out": "runs/lv2",
+    "buffer": "runs/demo/buffer.npz",
+    "episodes": 16,
+    "val_episodes": 0,
+    "max_actions": 256,
+    "policy": "heuristic",
+    "window": 15,
+    "seed": 0,
+    "epochs": 2,
+    "l2_epochs": 4,
+    "steps_per_epoch": 30,
+    "batch_size": 32,
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "grad_clip": 1.0,
+    "bootstrap_p": 0.8,
+    "members": 3,
+    "channels": 64,
+    "chunk_len": 4,
+    "levels": 2,
+    "dyna_rounds": 0,
+    "device": "cuda"
+  },
+  "label_stats": {
+    "transitions": 7029,
+    "gem_rate": 0.015507184521269028,
+    "room_change_rate": 0.011239152084222506,
+    "moved_rate": 0.8086498790724143,
+    "death_rate": 0.020059752454118653
+  },
+  "level1": {
+    "history": [
+      {
+        "epoch": 1,
+        "train": {
+          "loss": 6.6651308059692385,
+          "latent": 0.683977038661639,
+          "tile": 3.1446621417999268,
+          "tile_acc": 0.6823611249526341,
+          "changed_tile_acc": 0.11355237402021885,
+          "gem": 0.7623411575953166,
+          "gem_acc": 0.6239583333333333,
+          "gem_recall": 0.10004366102317969,
+          "gem_precision": 0.20688524146874746,
+          "gem_pos_rate": 0.371875,
+          "room": 0.38151895503203076,
+          "aux": 1.574009801944097,
+          "vicreg_var": 0.7908161838849386,
+          "vicreg_cov": 0.38579139597713946
+        },
+        "val": {}
+      },
+      {
+        "epoch": 2,
+        "train": {
+          "loss": 5.0855940818786625,
+          "latent": 0.48031619290510813,
+          "tile": 2.4313146352767943,
+          "tile_acc": 0.8069722374280294,
+          "changed_tile_acc": 0.131748462220033,
+          "gem": 0.5905942211548487,
+          "gem_acc": 0.6802083333333333,
+          "gem_recall": 0.15468226571877797,
+          "gem_precision": 0.5209090948104859,
+          "gem_pos_rate": 0.34791666666666665,
+          "room": 0.23504693905512491,
+          "aux": 0.6241906623045603,
+          "vicreg_var": 0.7048075735569,
+          "vicreg_cov": 1.14014020661513
+        },
+        "val": {}
+      }
+    ],
+    "best": {
+      "changed_tile_acc": 0.131748462220033,
+      "epoch": 2
+    }
+  },
+  "hierarchy": {
+    "history": [
+      {
+        "epoch": 1,
+        "l2_pred": 0.16457288548713778,
+        "l2_var": 0.5235360542448556,
+        "l2_cov": 1.5783980311416999,
+        "l2_stride": 4.0,
+        "l_total": 0.7512448595791328
+      },
+      {
+        "epoch": 2,
+        "l2_pred": 0.18208578250757076,
+        "l2_var": 0.4678498999374669,
+        "l2_cov": 1.8328073975516528,
+        "l2_stride": 4.0,
+        "l_total": 0.7232479772916655
+      },
+      {
+        "epoch": 3,
+        "l2_pred": 0.17731408287839193,
+        "l2_var": 0.44713823620865983,
+        "l2_cov": 2.018971715903864,
+        "l2_stride": 4.0,
+        "l_total": 0.7052111840829617
+      },
+      {
+        "epoch": 4,
+        "l2_pred": 0.17516024221734303,
+        "l2_var": 0.4375766832654069,
+        "l2_cov": 2.1472389907371707,
+        "l2_stride": 4.0,
+        "l_total": 0.6986264836497423
+      }
+    ]
+  }
+}

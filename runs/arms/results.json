@@ -1,0 +1,475 @@
+{
+  "args": {
+    "checkpoint": "runs/demo/final.pt",
+    "engine": "mock",
+    "real_levels": true,
+    "repo_root": null,
+    "node_bin": null,
+    "level": "level_HxI",
+    "view": "top-diagonal",
+    "episodes": 5,
+    "max_actions": 120,
+    "window": 15,
+    "members": 5,
+    "seed": 0,
+    "exploit": 1.0,
+    "arms": "random,memoryless,full",
+    "horizon": 8,
+    "samples": 192,
+    "iters": 3,
+    "out": "runs/arms",
+    "device": "cuda"
+  },
+  "trained": true,
+  "per_episode": {
+    "random": [
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 19,
+        "state_novelty_rate": 0.15833333333333333,
+        "deaths": 0,
+        "moves": 54,
+        "blocked_moves": 15,
+        "blocked_move_rate": 0.2777777777777778,
+        "rotations": 66,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 17,
+        "state_novelty_rate": 0.14166666666666666,
+        "deaths": 0,
+        "moves": 59,
+        "blocked_moves": 10,
+        "blocked_move_rate": 0.1694915254237288,
+        "rotations": 61,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 17,
+        "state_novelty_rate": 0.14166666666666666,
+        "deaths": 0,
+        "moves": 58,
+        "blocked_moves": 5,
+        "blocked_move_rate": 0.08620689655172414,
+        "rotations": 62,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 25,
+        "state_novelty_rate": 0.20833333333333334,
+        "deaths": 0,
+        "moves": 61,
+        "blocked_moves": 13,
+        "blocked_move_rate": 0.21311475409836064,
+        "rotations": 59,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 17,
+        "state_novelty_rate": 0.14166666666666666,
+        "deaths": 0,
+        "moves": 58,
+        "blocked_moves": 10,
+        "blocked_move_rate": 0.1724137931034483,
+        "rotations": 62,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      }
+    ],
+    "memoryless": [
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 2,
+        "state_novelty_rate": 0.016666666666666666,
+        "deaths": 0,
+        "moves": 3,
+        "blocked_moves": 0,
+        "blocked_move_rate": 0.0,
+        "rotations": 117,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 3,
+        "state_novelty_rate": 0.025,
+        "deaths": 0,
+        "moves": 3,
+        "blocked_moves": 0,
+        "blocked_move_rate": 0.0,
+        "rotations": 117,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 6,
+        "state_novelty_rate": 0.05,
+        "deaths": 0,
+        "moves": 20,
+        "blocked_moves": 5,
+        "blocked_move_rate": 0.25,
+        "rotations": 100,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 6,
+        "state_novelty_rate": 0.05,
+        "deaths": 0,
+        "moves": 26,
+        "blocked_moves": 7,
+        "blocked_move_rate": 0.2692307692307692,
+        "rotations": 94,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 3,
+        "state_novelty_rate": 0.025,
+        "deaths": 0,
+        "moves": 3,
+        "blocked_moves": 0,
+        "blocked_move_rate": 0.0,
+        "rotations": 117,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      }
+    ],
+    "full": [
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 63,
+        "state_novelty_rate": 0.525,
+        "deaths": 0,
+        "moves": 79,
+        "blocked_moves": 8,
+        "blocked_move_rate": 0.10126582278481013,
+        "rotations": 41,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 44,
+        "state_novelty_rate": 0.36666666666666664,
+        "deaths": 0,
+        "moves": 72,
+        "blocked_moves": 12,
+        "blocked_move_rate": 0.16666666666666666,
+        "rotations": 48,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 58,
+        "state_novelty_rate": 0.48333333333333334,
+        "deaths": 0,
+        "moves": 85,
+        "blocked_moves": 18,
+        "blocked_move_rate": 0.21176470588235294,
+        "rotations": 35,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 47,
+        "state_novelty_rate": 0.39166666666666666,
+        "deaths": 0,
+        "moves": 108,
+        "blocked_moves": 28,
+        "blocked_move_rate": 0.25925925925925924,
+        "rotations": 12,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      },
+      {
+        "steps": 120,
+        "gems": 0,
+        "rooms_visited": 1,
+        "novel_block_positions": 0,
+        "block_pushes": 0,
+        "unique_board_states": 59,
+        "state_novelty_rate": 0.49166666666666664,
+        "deaths": 0,
+        "moves": 89,
+        "blocked_moves": 12,
+        "blocked_move_rate": 0.1348314606741573,
+        "rotations": 31,
+        "room_changes": 0,
+        "first_gem_step": null,
+        "actions_per_room": 120.0,
+        "gem_score": 0.0,
+        "room_exploration_score": 0.0,
+        "block_progress_score": 0.0,
+        "total": 0.0
+      }
+    ]
+  },
+  "stats": {
+    "random": {
+      "gems": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "rooms_visited": {
+        "mean": 1.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "unique_board_states": {
+        "mean": 19.0,
+        "sem": 1.5491933384829666,
+        "n": 5
+      },
+      "state_novelty_rate": {
+        "mean": 0.15833333333333333,
+        "sem": 0.012909944487358058,
+        "n": 5
+      },
+      "novel_block_positions": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "deaths": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "blocked_move_rate": {
+        "mean": 0.18380094939100794,
+        "sem": 0.03126497202321375,
+        "n": 5
+      },
+      "total": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      }
+    },
+    "memoryless": {
+      "gems": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "rooms_visited": {
+        "mean": 1.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "unique_board_states": {
+        "mean": 4.0,
+        "sem": 0.8366600265340755,
+        "n": 5
+      },
+      "state_novelty_rate": {
+        "mean": 0.03333333333333334,
+        "sem": 0.006972166887783963,
+        "n": 5
+      },
+      "novel_block_positions": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "deaths": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "blocked_move_rate": {
+        "mean": 0.10384615384615384,
+        "sem": 0.06366517445094941,
+        "n": 5
+      },
+      "total": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      }
+    },
+    "full": {
+      "gems": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "rooms_visited": {
+        "mean": 1.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "unique_board_states": {
+        "mean": 54.2,
+        "sem": 3.6796738985948196,
+        "n": 5
+      },
+      "state_novelty_rate": {
+        "mean": 0.45166666666666666,
+        "sem": 0.03066394915495684,
+        "n": 5
+      },
+      "novel_block_positions": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "deaths": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      },
+      "blocked_move_rate": {
+        "mean": 0.17475758305344927,
+        "sem": 0.02790220190708284,
+        "n": 5
+      },
+      "total": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "n": 5
+      }
+    }
+  }
+}
