@@ -15,3 +15,6 @@ runs/**/buffer.npz
 
 # Local transfer bundle, not part of the history it carries.
 *.bundle
+
+# The engine clone lives here but belongs to its own repository.
+MazeBenchEngine/
