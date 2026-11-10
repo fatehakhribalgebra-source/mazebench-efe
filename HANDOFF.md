@@ -1,5 +1,10 @@
 # Handoff
 
+> **Read `REPORT.md` first.** It is the full briefing — the algorithm, the
+> measured state, the open problems and the corrected next runs. This file is
+> the machine setup (section 1); `REPORT.md` supersedes sections 3, 4 and 5
+> below where they differ, in particular the run-2 command.
+
 Everything needed to continue this project on a different machine. Written
 9 Nov 2026, because the assistant's own memory of this work is stored per
 machine and does not travel — this file is the continuity, so keep it current.
