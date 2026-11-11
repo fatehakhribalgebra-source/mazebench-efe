@@ -1,0 +1,54 @@
+{
+  "checkpoint": "runs\\pilot\\hjepa3\\final.pt",
+  "n_levels": 3,
+  "strides": [
+    1,
+    4,
+    16
+  ],
+  "goals": 2,
+  "horizon": 8,
+  "budget": 8,
+  "plan_horizon": 16,
+  "samples": 128,
+  "success_rate": 0.0,
+  "within_1_cell_rate": 0.5,
+  "mean_final_manhattan": 1.5,
+  "cem": {
+    "horizon": 16,
+    "n_samples": 128,
+    "n_iters": 2,
+    "elite_frac": 0.125,
+    "coarse_keep": 64,
+    "mid_keep": 16,
+    "temperature": 1.0,
+    "smoothing": 0.1,
+    "replan_every": 1,
+    "terminal_weight": 0.1,
+    "seed": 0
+  },
+  "results": [
+    {
+      "episode": "ep_00003",
+      "start_step": 45,
+      "goal_step": 53,
+      "distance": 8,
+      "reached": false,
+      "reached_at": null,
+      "final_manhattan": 2,
+      "final_latent_cost": 0.031668659299612045,
+      "best_plan_cost": 0.0323331281542778
+    },
+    {
+      "episode": "ep_00003",
+      "start_step": 41,
+      "goal_step": 49,
+      "distance": 8,
+      "reached": false,
+      "reached_at": null,
+      "final_manhattan": 1,
+      "final_latent_cost": 0.02519863471388817,
+      "best_plan_cost": 0.026199746876955032
+    }
+  ]
+}

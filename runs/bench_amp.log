@@ -1,0 +1,7 @@
+bs=32 only; bf16 autocast vs fp32
+
+level1 stride 1: fp32  7.478 ms/win   bf16  3.031 ms/win   speedup 2.47x
+level2 stride 4: fp32  7.495 ms/win   bf16  3.040 ms/win   speedup 2.47x
+level3 stride16: fp32  7.503 ms/win   bf16  3.072 ms/win   speedup 2.44x
+
+peak GPU alloc: 7.22 GB

@@ -1,0 +1,22 @@
+{
+ "n_frames": 3,
+ "actions": [
+  0,
+  0
+ ],
+ "action_names": [
+  "up",
+  "up"
+ ],
+ "rooms": [
+  "level_JxM",
+  "level_JxM",
+  "level_JxM"
+ ],
+ "start_level": "level_JxM",
+ "yaw": 2,
+ "view": 1,
+ "seed": 100034,
+ "terminated": "player_dead",
+ "render_seconds": 0.432
+}

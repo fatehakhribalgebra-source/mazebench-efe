@@ -1,0 +1,45 @@
+{
+ "note": "evaluator-only; never train or plan on this",
+ "steps": [
+  {
+   "board_state_hash": "7b6b06c052bef6f6d98faa2e9580f9b4338bfe9051d30c8605decd0f423bf791",
+   "player_x": 11,
+   "player_y": 15,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": null,
+   "collected_gems": [],
+   "level_id": "level_DxN"
+  },
+  {
+   "board_state_hash": "1fcbceb93807cb70894be04ce7cdeaf61a037d51b58d225961f99db447d4531f",
+   "player_x": 11,
+   "player_y": 14,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_DxN"
+  },
+  {
+   "board_state_hash": "cbd3cf448d3a966e8bf71a31545a0d8ed06ec0b458eaa58e61c23b92ed2ebbbd",
+   "player_x": 11,
+   "player_y": 12,
+   "push_count": 55,
+   "novel_push_count": 55,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_DxN"
+  },
+  {
+   "board_state_hash": "0a59e39b8f19e25063b05e329ba5936b964795f17298ad7ecd4e142b5ad386a9",
+   "player_x": null,
+   "player_y": null,
+   "push_count": 55,
+   "novel_push_count": 55,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_DxN"
+  }
+ ]
+}

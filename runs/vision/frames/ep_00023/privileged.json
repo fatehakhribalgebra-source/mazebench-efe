@@ -1,0 +1,55 @@
+{
+ "note": "evaluator-only; never train or plan on this",
+ "steps": [
+  {
+   "board_state_hash": "c95b0ae3541ca8d2029007b6c8286e0281fe67cabd098e0320dbbf4262920e9c",
+   "player_x": 1,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": null,
+   "collected_gems": [],
+   "level_id": "level_LxJ"
+  },
+  {
+   "board_state_hash": "617b067219c554a0caa257e7c8bfd45abee45e55bcbe979e62df7112af233906",
+   "player_x": 1,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_LxJ"
+  },
+  {
+   "board_state_hash": "c95b0ae3541ca8d2029007b6c8286e0281fe67cabd098e0320dbbf4262920e9c",
+   "player_x": 1,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_LxJ"
+  },
+  {
+   "board_state_hash": "617b067219c554a0caa257e7c8bfd45abee45e55bcbe979e62df7112af233906",
+   "player_x": 1,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_LxJ"
+  },
+  {
+   "board_state_hash": "968f2f3dddc6d3fb11dd424f66af1a3d8b622820321f684c5f0ea29edb6d8f86",
+   "player_x": null,
+   "player_y": null,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_LxJ"
+  }
+ ]
+}

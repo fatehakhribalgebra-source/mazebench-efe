@@ -1,0 +1,62 @@
+{
+  "args": {
+    "latents": "runs\\pilot\\latents",
+    "out": "runs\\pilot\\amp_check",
+    "levels": 1,
+    "context": 2,
+    "rollout": 4,
+    "depth": 6,
+    "heads": 6,
+    "epochs": 2,
+    "batch_size": 32,
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "val_frac": 0.1,
+    "max_batches": null,
+    "workers": 0,
+    "amp": true,
+    "seed": 0,
+    "device": "cuda"
+  },
+  "levels": {
+    "1": {
+      "stride": 1,
+      "history": [
+        {
+          "epoch": 1,
+          "train": {
+            "loss": 0.07866054524978001,
+            "first": 0.0712838327512145,
+            "last": 0.09301331639289856,
+            "identity": 0.07601249317328135
+          },
+          "val": {
+            "loss": 0.08626352933545907,
+            "first": 0.044233265643318496,
+            "last": 0.12834719754755497,
+            "identity": 0.08604934439063072
+          },
+          "vs_identity": 1.0024890944416267
+        },
+        {
+          "epoch": 2,
+          "train": {
+            "loss": 0.07586957439780236,
+            "first": 0.07053533190240463,
+            "last": 0.0869073914984862,
+            "identity": 0.0761862243215243
+          },
+          "val": {
+            "loss": 0.08578911734124024,
+            "first": 0.0441285683773458,
+            "last": 0.12741963658481836,
+            "identity": 0.08604934439063072
+          },
+          "vs_identity": 0.9969758392555654
+        }
+      ],
+      "best_val": 0.08578911734124024,
+      "beats_identity": true
+    }
+  }
+}

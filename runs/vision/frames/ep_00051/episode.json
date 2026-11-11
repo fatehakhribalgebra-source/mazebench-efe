@@ -1,0 +1,31 @@
+{
+ "n_frames": 6,
+ "actions": [
+  0,
+  3,
+  0,
+  1,
+  3
+ ],
+ "action_names": [
+  "up",
+  "right",
+  "up",
+  "down",
+  "right"
+ ],
+ "rooms": [
+  "level_OxC",
+  "level_OxC",
+  "level_OxC",
+  "level_OxC",
+  "level_OxC",
+  "level_OxC"
+ ],
+ "start_level": "level_OxC",
+ "yaw": 2,
+ "view": 1,
+ "seed": 100054,
+ "terminated": "player_dead",
+ "render_seconds": 1.9
+}

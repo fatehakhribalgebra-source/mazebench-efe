@@ -1,0 +1,43 @@
+{
+ "n_frames": 10,
+ "actions": [
+  3,
+  0,
+  0,
+  2,
+  1,
+  0,
+  0,
+  0,
+  0
+ ],
+ "action_names": [
+  "right",
+  "up",
+  "up",
+  "left",
+  "down",
+  "up",
+  "up",
+  "up",
+  "up"
+ ],
+ "rooms": [
+  "level_GxG",
+  "level_GxG",
+  "level_GxG",
+  "level_GxG",
+  "level_GxG",
+  "level_GxG",
+  "level_GxG",
+  "level_FxG",
+  "level_FxG",
+  "level_FxG"
+ ],
+ "start_level": "level_GxG",
+ "yaw": 1,
+ "view": 1,
+ "seed": 100040,
+ "terminated": "player_dead",
+ "render_seconds": 2.243
+}

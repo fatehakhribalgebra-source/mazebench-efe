@@ -1,0 +1,28 @@
+{
+ "n_frames": 5,
+ "actions": [
+  0,
+  1,
+  0,
+  0
+ ],
+ "action_names": [
+  "up",
+  "down",
+  "up",
+  "up"
+ ],
+ "rooms": [
+  "level_LxJ",
+  "level_LxJ",
+  "level_LxJ",
+  "level_LxJ",
+  "level_LxJ"
+ ],
+ "start_level": "level_LxJ",
+ "yaw": 2,
+ "view": 1,
+ "seed": 100026,
+ "terminated": "player_dead",
+ "render_seconds": 0.791
+}

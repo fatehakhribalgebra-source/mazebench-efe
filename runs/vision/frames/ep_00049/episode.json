@@ -1,0 +1,14 @@
+{
+ "n_frames": 1,
+ "actions": [],
+ "action_names": [],
+ "rooms": [
+  "level_OxA"
+ ],
+ "start_level": "level_OxA",
+ "yaw": 1,
+ "view": 1,
+ "seed": 100052,
+ "terminated": "bridge: move failed: The player died, you must now undo or reset or go to a level.",
+ "render_seconds": 0.125
+}

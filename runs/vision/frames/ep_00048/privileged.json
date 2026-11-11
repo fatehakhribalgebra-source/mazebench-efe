@@ -1,0 +1,35 @@
+{
+ "note": "evaluator-only; never train or plan on this",
+ "steps": [
+  {
+   "board_state_hash": "7716c052e564e0a827185785d17c0008be34871a87147372a38d1656414e8e00",
+   "player_x": 6,
+   "player_y": 1,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": null,
+   "collected_gems": [],
+   "level_id": "level_JxK"
+  },
+  {
+   "board_state_hash": "bec4cfa0aa4aa011e75ec85fa30e303512b9a2744491379053ffe4de1ec886d4",
+   "player_x": 6,
+   "player_y": 0,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_JxK"
+  },
+  {
+   "board_state_hash": "b28bcd2ff6ab7d1964e0d203bfcab09e7d7808a5b2575873c2009c0193a248da",
+   "player_x": null,
+   "player_y": null,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_JxK"
+  }
+ ]
+}

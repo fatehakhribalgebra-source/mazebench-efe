@@ -1,0 +1,15 @@
+{
+ "note": "evaluator-only; never train or plan on this",
+ "steps": [
+  {
+   "board_state_hash": "0f70d733fa9288e98e337bc8deb773d02c699ff8df9c8893e7b3a7a28ea56c85",
+   "player_x": null,
+   "player_y": null,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": null,
+   "collected_gems": [],
+   "level_id": "level_NxA"
+  }
+ ]
+}

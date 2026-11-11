@@ -1,0 +1,1295 @@
+{
+ "note": "evaluator-only; never train or plan on this",
+ "steps": [
+  {
+   "board_state_hash": "2dfcef97403d78cb5d1bde938fcfa870a4bddc65a0fbf42911fed077d58575f7",
+   "player_x": 1,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": null,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "840d0b4a22453ef0997c4f7eaa57011be825b9df6f151bf0116afdf966e0211e",
+   "player_x": 1,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "313c924423ac7146370552221b4f28b7231ec95d0ba7a26ede957e5c73a85897",
+   "player_x": 2,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "2ab104a57b0a109f781f43c6766068829bbe1619895f907c6a4c08bc23d1c7d4",
+   "player_x": 3,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "e2155d74427433b91215012f500a3bdcd08433773a9b04793d82eb80d8f43617",
+   "player_x": 4,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "5582f57770740e3af6a9e572037f92eb59e9165f9ddebec79c37b34920ab3a04",
+   "player_x": 5,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "ced403ca16c353056267f376a5cdd7ec3b048988f1baf611d841d5c7518e968f",
+   "player_x": 6,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "5f4c9b0ec4003d7dccb7f6aa1725978b8ee337970d3dff4d3ce92154aedd1d6b",
+   "player_x": 7,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "ced403ca16c353056267f376a5cdd7ec3b048988f1baf611d841d5c7518e968f",
+   "player_x": 6,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "5f4c9b0ec4003d7dccb7f6aa1725978b8ee337970d3dff4d3ce92154aedd1d6b",
+   "player_x": 7,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "ba23b4323f5247450d52bb88c9853408466384dc2e10ac49f3e24004ddbe80b8",
+   "player_x": 8,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "ba23b4323f5247450d52bb88c9853408466384dc2e10ac49f3e24004ddbe80b8",
+   "player_x": 8,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "ba23b4323f5247450d52bb88c9853408466384dc2e10ac49f3e24004ddbe80b8",
+   "player_x": 8,
+   "player_y": 4,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "778ae5075f72b720af2f6c8534cddc1fb6244d7b7971a4369392bb8bc56c2727",
+   "player_x": 7,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "95563a12f31e3d464162b29c1f0de306ffdbbf3fd916d668489b265c0a82e4d7",
+   "player_x": 8,
+   "player_y": 5,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3a9d5db979ec7e6a98709347348ebb33cfce6eab1ae3f39e1ba75f2dfd5b41a7",
+   "player_x": 8,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "76391fdaaf56272766921fe774b1aea18985de6f62f50c1d37365e9bf1f5df65",
+   "player_x": 7,
+   "player_y": 6,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "09aee27b1fcdc1218ab058b4a537e30676469605aeaba94c8b0cc747acc56630",
+   "player_x": 7,
+   "player_y": 7,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "0e969d9e68c946c869dd034af0b5dd5e4fa56e7969004da68fc9435bd998c86c",
+   "player_x": 7,
+   "player_y": 8,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "0e969d9e68c946c869dd034af0b5dd5e4fa56e7969004da68fc9435bd998c86c",
+   "player_x": 7,
+   "player_y": 8,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "5c81e209b629bcc01ae98413700e25bed2dc6d6b5f61778d15e66316d37a3682",
+   "player_x": 7,
+   "player_y": 9,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "5c81e209b629bcc01ae98413700e25bed2dc6d6b5f61778d15e66316d37a3682",
+   "player_x": 7,
+   "player_y": 9,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "df751aae0b55767fa2553217017c0be0f92def9b723d421843982091a1a6be6f",
+   "player_x": 7,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "d7a65fb4d78388126d4fec0294b2eb7da54a4cd15c1d932e94b4ad0916c85098",
+   "player_x": 8,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3066bb9c96fd8edc0b979b115d90d91d10b9a436e34b06bea05f0bb8a1bc6bcf",
+   "player_x": 9,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "3066bb9c96fd8edc0b979b115d90d91d10b9a436e34b06bea05f0bb8a1bc6bcf",
+   "player_x": 9,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "69580b56dd7e39f0bab66083a7f03893169bc10c70d7c143ffbd1445cac0a115",
+   "player_x": 10,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "60eee7536f20f3b8719a94b287b30833904b1aeca0883c29da9cc5448327ea81",
+   "player_x": 11,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "9003b5d68f4566160d976dea7ff8787b7bfc816c11d0f63e15c4b9c002ecb694",
+   "player_x": 12,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "d5dff5eda2e03e2a51a0feda93ef2fd725c94233b41ee82dd191865e08ba83ae",
+   "player_x": 13,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "d5dff5eda2e03e2a51a0feda93ef2fd725c94233b41ee82dd191865e08ba83ae",
+   "player_x": 13,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "d5dff5eda2e03e2a51a0feda93ef2fd725c94233b41ee82dd191865e08ba83ae",
+   "player_x": 13,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "d5dff5eda2e03e2a51a0feda93ef2fd725c94233b41ee82dd191865e08ba83ae",
+   "player_x": 13,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "d5dff5eda2e03e2a51a0feda93ef2fd725c94233b41ee82dd191865e08ba83ae",
+   "player_x": 13,
+   "player_y": 10,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "92ad6f0250c92deab7619f097f14480e48eaa7bb8fc662c0b559cb5f439f2045",
+   "player_x": 12,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "92ad6f0250c92deab7619f097f14480e48eaa7bb8fc662c0b559cb5f439f2045",
+   "player_x": 12,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "92ad6f0250c92deab7619f097f14480e48eaa7bb8fc662c0b559cb5f439f2045",
+   "player_x": 12,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "92ad6f0250c92deab7619f097f14480e48eaa7bb8fc662c0b559cb5f439f2045",
+   "player_x": 12,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "92ad6f0250c92deab7619f097f14480e48eaa7bb8fc662c0b559cb5f439f2045",
+   "player_x": 12,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "48cc263a0083c0fb98a7605de0576b4242f0810642a55d236ca909e4685fcfd9",
+   "player_x": 13,
+   "player_y": 11,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "92ad6f0250c92deab7619f097f14480e48eaa7bb8fc662c0b559cb5f439f2045",
+   "player_x": 12,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "92ad6f0250c92deab7619f097f14480e48eaa7bb8fc662c0b559cb5f439f2045",
+   "player_x": 12,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  },
+  {
+   "board_state_hash": "fbeb1c08215e79820d6628042707a054d1472217ab4b59544854ba494156614e",
+   "player_x": 13,
+   "player_y": 12,
+   "push_count": 0,
+   "novel_push_count": 0,
+   "room_changed": false,
+   "collected_gems": [],
+   "level_id": "level_MxC"
+  }
+ ]
+}

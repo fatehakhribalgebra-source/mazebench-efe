@@ -1,0 +1,81 @@
+node    : C:\mazebench\tools\node\node-v26.13.0-win-x64\node.EXE
+browser : C:\Program Files\Google\Chrome\Application\chrome.exe
+view    : 1   size: 512x512
+  ep 00000 level_ExE yaw=0   54 frames  DISCARDED (player_dead)
+  ep 00001 level_CxI yaw=0  129 frames  rooms=3  total=129  0.253 s/frame  elapsed=0.6m
+  ep 00002 level_NxP yaw=3  129 frames  rooms=1  total=258  0.236 s/frame  elapsed=1.1m
+  ep 00003 level_BxP yaw=3  129 frames  rooms=2  total=387  0.209 s/frame  elapsed=1.5m
+  ep 00004 level_LxG yaw=0  129 frames  rooms=2  total=516  0.199 s/frame  elapsed=1.9m
+  ep 00005 level_JxP yaw=0  129 frames  rooms=1  total=645  0.183 s/frame  elapsed=2.2m
+  ep 00006 level_HxM yaw=3    1 frames  DISCARDED (bridge: move failed: The player died, you must now undo or reset or go to a level.)
+  ep 00007 level_BxA yaw=3    1 frames  DISCARDED (bridge: move failed: The player died, you must now undo or reset or go to a level.)
+  ep 00008 level_IxI yaw=1  129 frames  rooms=1  total=774  0.194 s/frame  elapsed=2.9m
+  ep 00009 level_ExD yaw=2    7 frames  DISCARDED (player_dead)
+  ep 00010 level_PxA yaw=0  129 frames  rooms=1  total=903  0.192 s/frame  elapsed=3.3m
+  ep 00011 level_NxA yaw=0    1 frames  DISCARDED (bridge: move failed: The player died, you must now undo or reset or go to a level.)
+  ep 00012 level_DxM yaw=1   28 frames  DISCARDED (player_dead)
+  ep 00013 level_IxN yaw=0    6 frames  DISCARDED (player_dead)
+  ep 00014 level_BxH yaw=3  129 frames  rooms=2  total=1032  0.196 s/frame  elapsed=4.0m
+  ep 00015 level_NxP yaw=1  129 frames  rooms=2  total=1161  0.189 s/frame  elapsed=4.3m
+  ep 00016 level_AxL yaw=1   69 frames  DISCARDED (player_dead)
+  ep 00017 level_AxH yaw=3  129 frames  rooms=1  total=1290  0.196 s/frame  elapsed=4.9m
+  ep 00018 level_ExJ yaw=0   47 frames  DISCARDED (player_dead)
+  ep 00019 level_FxN yaw=0  129 frames  rooms=2  total=1419  0.199 s/frame  elapsed=5.5m
+  ep 00020 level_PxF yaw=2  129 frames  rooms=3  total=1548  0.205 s/frame  elapsed=6.2m
+  ep 00021 level_NxD yaw=2  120 frames  rooms=2  total=1668  0.200 s/frame  elapsed=6.5m  [player_dead]
+  ep 00022 level_IxN yaw=1   88 frames  rooms=2  total=1756  0.197 s/frame  elapsed=6.7m  [player_dead]
+  ep 00023 level_LxJ yaw=2    5 frames  DISCARDED (player_dead)
+  ep 00024 level_PxP yaw=3  129 frames  rooms=1  total=1885  0.196 s/frame  elapsed=7.2m
+  ep 00025 level_BxB yaw=3  129 frames  rooms=2  total=2014  0.194 s/frame  elapsed=7.6m
+  ep 00026 level_MxH yaw=3  129 frames  rooms=2  total=2143  0.193 s/frame  elapsed=8.0m
+  ep 00027 level_ExN yaw=1  129 frames  rooms=2  total=2272  0.190 s/frame  elapsed=8.4m
+  ep 00028 level_LxL yaw=2  129 frames  rooms=2  total=2401  0.188 s/frame  elapsed=8.7m
+  ep 00029 level_MxC yaw=3  129 frames  rooms=1  total=2530  0.185 s/frame  elapsed=9.1m
+  ep 00030 level_HxD yaw=1    2 frames  DISCARDED (player_dead)
+  ep 00031 level_JxM yaw=2    3 frames  DISCARDED (player_dead)
+  ep 00032 level_KxP yaw=0  129 frames  rooms=1  total=2659  0.183 s/frame  elapsed=9.5m
+  ep 00033 level_AxP yaw=0  129 frames  rooms=1  total=2788  0.187 s/frame  elapsed=10.1m
+  ep 00034 level_NxJ yaw=3    1 frames  DISCARDED (bridge: move failed: The player died, you must now undo or reset or go to a level.)
+  ep 00035 level_HxF yaw=1   25 frames  DISCARDED (player_dead)
+  ep 00036 level_ExH yaw=0    9 frames  DISCARDED (player_dead)
+  ep 00037 level_GxG yaw=1   10 frames  DISCARDED (player_dead)
+  ep 00038 level_PxM yaw=2  129 frames  rooms=3  total=2917  0.196 s/frame  elapsed=11.2m
+  ep 00039 level_ExL yaw=3  129 frames  rooms=1  total=3046  0.195 s/frame  elapsed=11.6m
+  ep 00040 level_JxI yaw=0  129 frames  rooms=2  total=3175  0.193 s/frame  elapsed=11.9m
+  ep 00041 level_ExM yaw=1  129 frames  rooms=2  total=3304  0.206 s/frame  elapsed=13.1m
+  ep 00042 level_JxG yaw=3  129 frames  rooms=2  total=3433  0.206 s/frame  elapsed=13.6m
+  ep 00043 level_MxB yaw=3   38 frames  DISCARDED (player_dead)
+  ep 00044 level_KxL yaw=1  129 frames  rooms=2  total=3562  0.205 s/frame  elapsed=14.1m
+  ep 00045 level_DxN yaw=3    4 frames  DISCARDED (player_dead)
+  ep 00046 level_GxL yaw=3  129 frames  rooms=1  total=3691  0.204 s/frame  elapsed=14.5m
+  ep 00047 level_BxL yaw=0  129 frames  rooms=2  total=3820  0.202 s/frame  elapsed=14.9m
+  ep 00048 level_JxK yaw=3    3 frames  DISCARDED (player_dead)
+  ep 00049 level_OxA yaw=1    1 frames  DISCARDED (bridge: move failed: The player died, you must now undo or reset or go to a level.)
+  ep 00050 level_KxF yaw=1  129 frames  rooms=2  total=3949  0.201 s/frame  elapsed=15.3m
+  ep 00051 level_OxC yaw=2    6 frames  DISCARDED (player_dead)
+  ep 00052 level_AxB yaw=0  129 frames  rooms=2  total=4078  0.205 s/frame  elapsed=16.1m
+  ep 00053 level_KxC yaw=0  129 frames  rooms=1  total=4207  0.204 s/frame  elapsed=16.5m
+  ep 00054 level_HxO yaw=0  129 frames  rooms=1  total=4336  0.202 s/frame  elapsed=16.9m
+  ep 00055 level_PxI yaw=1   50 frames  DISCARDED (player_dead)
+  ep 00056 level_JxI yaw=0  129 frames  rooms=2  total=4465  0.203 s/frame  elapsed=17.5m
+  ep 00057 level_OxF yaw=2  129 frames  rooms=2  total=4594  0.202 s/frame  elapsed=17.9m
+  ep 00058 level_ExJ yaw=0  129 frames  rooms=2  total=4723  0.203 s/frame  elapsed=18.4m  [player_dead]
+  ep 00059 level_FxF yaw=1   25 frames  DISCARDED (player_dead)
+  ep 00060 level_CxI yaw=1  129 frames  rooms=5  total=4852  0.205 s/frame  elapsed=19.2m
+  ep 00061 level_LxI yaw=2  129 frames  rooms=2  total=4981  0.208 s/frame  elapsed=19.9m
+  ep 00062 level_IxO yaw=2  129 frames  rooms=1  total=5110  0.206 s/frame  elapsed=20.2m
+  ep 00063 level_OxP yaw=3   28 frames  DISCARDED (player_dead)
+  ep 00064 level_KxD yaw=0   96 frames  rooms=1  total=5206  0.207 s/frame  elapsed=20.7m  [player_dead]
+  ep 00065 level_PxJ yaw=3  129 frames  rooms=3  total=5335  0.207 s/frame  elapsed=21.2m
+  ep 00066 level_PxK yaw=3  129 frames  rooms=3  total=5464  0.208 s/frame  elapsed=21.7m
+  ep 00067 level_AxG yaw=2  129 frames  rooms=2  total=5593  0.208 s/frame  elapsed=22.3m
+  ep 00068 level_HxD yaw=2    4 frames  DISCARDED (player_dead)
+  ep 00069 level_LxG yaw=3  129 frames  rooms=1  total=5722  0.207 s/frame  elapsed=22.7m
+  ep 00070 level_KxA yaw=1    1 frames  DISCARDED (bridge: move failed: The player died, you must now undo or reset or go to a level.)
+  ep 00071 level_JxA yaw=3    1 frames  DISCARDED (bridge: move failed: The player died, you must now undo or reset or go to a level.)
+  ep 00072 level_KxE yaw=0  129 frames  rooms=2  total=5851  0.206 s/frame  elapsed=23.2m
+  ep 00073 level_CxF yaw=3    7 frames  DISCARDED (player_dead)
+  ep 00074 level_KxN yaw=1    3 frames  DISCARDED (player_dead)
+  ep 00075 level_GxO yaw=1  129 frames  rooms=1  total=5980  0.206 s/frame  elapsed=23.7m
+  ep 00076 level_PxA yaw=3  129 frames  rooms=2  total=6109  0.206 s/frame  elapsed=24.2m
+  ep 00077 level_ExK yaw=3  129 frames  rooms=1  total=6238  0.205 s/frame  elapsed=24.6m

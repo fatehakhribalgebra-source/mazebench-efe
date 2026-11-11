@@ -1,0 +1,40 @@
+{
+ "n_frames": 9,
+ "actions": [
+  3,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  3
+ ],
+ "action_names": [
+  "right",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "up",
+  "right"
+ ],
+ "rooms": [
+  "level_ExH",
+  "level_ExH",
+  "level_ExH",
+  "level_ExH",
+  "level_ExH",
+  "level_ExH",
+  "level_ExH",
+  "level_ExH",
+  "level_ExH"
+ ],
+ "start_level": "level_ExH",
+ "yaw": 0,
+ "view": 1,
+ "seed": 100039,
+ "terminated": "player_dead",
+ "render_seconds": 2.111
+}

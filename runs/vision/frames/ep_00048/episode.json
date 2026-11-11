@@ -1,0 +1,22 @@
+{
+ "n_frames": 3,
+ "actions": [
+  2,
+  0
+ ],
+ "action_names": [
+  "left",
+  "up"
+ ],
+ "rooms": [
+  "level_JxK",
+  "level_JxK",
+  "level_JxK"
+ ],
+ "start_level": "level_JxK",
+ "yaw": 3,
+ "view": 1,
+ "seed": 100051,
+ "terminated": "player_dead",
+ "render_seconds": 0.384
+}

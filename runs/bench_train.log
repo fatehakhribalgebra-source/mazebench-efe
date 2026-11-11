@@ -1,0 +1,8 @@
+level1 stride 1 bs 32: 7.463 ms/window  => 5.6 min/epoch @45k windows
+level1 stride 1 bs 64: 249.258 ms/window  => 186.9 min/epoch @45k windows
+level2 stride 4 bs 32: 11.416 ms/window  => 8.6 min/epoch @45k windows
+level2 stride 4 bs 64: 131.225 ms/window  => 98.4 min/epoch @45k windows
+level3 stride16 bs 32: 7.464 ms/window  => 5.6 min/epoch @45k windows
+level3 stride16 bs 64: 118.444 ms/window  => 88.8 min/epoch @45k windows
+
+peak GPU alloc: 13.98 GB

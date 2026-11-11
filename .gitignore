@@ -16,5 +16,19 @@ runs/**/buffer.npz
 # Local transfer bundle, not part of the history it carries.
 *.bundle
 
+# Collected vision frames and their encoder latents: 2.2 GB, and regenerable.
+# What is NOT ignored is the per-episode episode.json, because the action log
+# *is* the dataset in compressed form -- the bridge replays bit-exact, so the
+# frames can be rebuilt from the actions plus the level and yaw. 1.96 MB of
+# JSON stands in for 624 MB of PNG. See tests/verify_replay.py for the proof
+# and the measured fidelity (state-exact, 1.72% latent error).
+runs/**/frames/*.png
+runs/**/latents/*.npz
+
+# Diagnostic captures: single frames written while chasing the renderer's
+# nondeterminism. The scripts in tests/diag_*.py regenerate them.
+runs/smoke/
+runs/diag/
+
 # The engine clone lives here but belongs to its own repository.
 MazeBenchEngine/

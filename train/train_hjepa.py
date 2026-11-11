@@ -34,7 +34,17 @@ def identity_baseline(batch: dict) -> torch.Tensor:
     return torch.nn.functional.mse_loss(last, batch["targets"])
 
 
-def run_epoch(model, level, loader, optimiser, device, train: bool, max_batches=None):
+def run_epoch(model, level, loader, optimiser, device, train: bool, max_batches=None,
+              amp: bool = False):
+    """One pass over ``loader``.
+
+    ``amp`` runs the predictor under bfloat16 autocast. bf16 rather than fp16
+    because it keeps fp32's exponent range, so no gradient scaler is needed and
+    the loss cannot silently underflow -- which matters here, where the losses
+    are already small numbers being compared against a baseline. The identity
+    baseline is computed outside autocast so the number the gate is judged on is
+    always full precision and comparable across runs.
+    """
     model.train(train)
     totals = {"loss": 0.0, "first": 0.0, "last": 0.0, "identity": 0.0, "n": 0}
     for i, batch in enumerate(loader):
@@ -42,7 +52,12 @@ def run_epoch(model, level, loader, optimiser, device, train: bool, max_batches=
             break
         batch = {k: v.to(device, non_blocking=True) for k, v in batch.items()}
         with torch.set_grad_enabled(train):
-            out = model.loss(batch["context"], batch["actions"], batch["targets"], level=level)
+            with torch.autocast(device_type="cuda", dtype=torch.bfloat16,
+                                enabled=amp and str(device).startswith("cuda")):
+                out = model.loss(batch["context"], batch["actions"],
+                                 batch["targets"], level=level)
+            out = {k: (v.float() if torch.is_tensor(v) else v)
+                   for k, v in out.items()}
         if train:
             optimiser.zero_grad(set_to_none=True)
             out["loss"].backward()
@@ -73,6 +88,9 @@ def main() -> int:
     p.add_argument("--val-frac", type=float, default=0.1)
     p.add_argument("--max-batches", type=int, default=None, help="cap batches per epoch")
     p.add_argument("--workers", type=int, default=0)
+    p.add_argument("--amp", action="store_true",
+                   help="bfloat16 autocast for the predictor; identity baseline "
+                        "stays fp32 so the gate number is unaffected")
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = p.parse_args()
@@ -117,8 +135,10 @@ def main() -> int:
         history, best = [], float("inf")
         for epoch in range(1, args.epochs + 1):
             t0 = time.time()
-            tr = run_epoch(model, level, train_loader, optimiser, args.device, True, args.max_batches)
-            va = run_epoch(model, level, val_loader, optimiser, args.device, False, args.max_batches)
+            tr = run_epoch(model, level, train_loader, optimiser, args.device, True,
+                           args.max_batches, args.amp)
+            va = run_epoch(model, level, val_loader, optimiser, args.device, False,
+                           args.max_batches, args.amp)
             ratio = va["loss"] / max(va["identity"], 1e-9)
             history.append({"epoch": epoch, "train": tr, "val": va, "vs_identity": ratio})
             print(
@@ -129,9 +149,12 @@ def main() -> int:
             )
             if va["loss"] < best:
                 best = va["loss"]
+                # Per level: a single best.pt was overwritten by each level in
+                # turn, so it ended up holding only the last level's best and
+                # silently misrepresented the others.
                 torch.save(
                     {"config": config.__dict__, "state": model.state_dict(), "level": level},
-                    out / "best.pt",
+                    out / f"best_level{level + 1}.pt",
                 )
         report["levels"][str(level + 1)] = {
             "stride": stride, "history": history, "best_val": best,
