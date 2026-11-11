@@ -1,10 +1,12 @@
-# core -- everything in the default (tile) pipeline needs only these
+# core
 torch>=2.1
 numpy>=1.24
 
-# optional: the transfer-learning / pixel path in model/vision.py
-# transformers>=4.46
-# pillow>=10.0
+# the vision pipeline (model/hjepa.py) -- no longer optional.
+# The project trains on the real game's rendered frames through a frozen
+# DINOv2 encoder, so these are needed for the main path, not a side path.
+transformers>=4.46
+pillow>=10.0
 
 # optional: running the test suite under pytest instead of `python tests/test_all.py`
 # pytest>=7.4
