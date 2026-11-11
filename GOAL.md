@@ -30,6 +30,26 @@ MazeBench is navigation, so PointMaze and Wall are the analogues.
 **Target: ~80% success on single-room goal screenshots.** Below ~60% the model
 is not good enough to build anything on top of.
 
+## The observation: exactly what a human sees
+
+The agent gets **the rendered 3D game and nothing else**. No ASCII, no JSON, no
+coordinates, no state fields. If a person playing at mazebench.com cannot see
+it on screen, the model does not get it.
+
+| | Value | Why |
+| --- | --- | --- |
+| Source | the **real engine**, Playwright-rendered | not our mock; see `PHASE0.md` |
+| Capture | **512x512 PNG** | the renderer's own default (`maze-render-frame.js`) |
+| View | `view=1`, the default | the 3x3 room neighbourhood the play page shows — the human's view |
+| Into the model | **224x224 RGB**, ImageNet-normalised | DINOv2 ViT-S/14 at 224 gives a 16x16 patch grid |
+| Camera | fixed yaw and tilt per episode | rotation is not an action, so the goal image and the current frame share a camera |
+
+One choice worth knowing about: the play page is wide (1280x880) while the
+renderer's default is square. We render **square**, because that is what their
+own vision observation mode does and matching the benchmark matters more than
+matching the browser window's aspect ratio. Vary `yaw` *across* episodes so the
+model does not overfit one camera angle, but hold it fixed *within* one.
+
 ## What that means concretely
 
 - Frozen **DINOv2 ViT-S/14 @224** encoder, never fine-tuned. It is 1.7B images
