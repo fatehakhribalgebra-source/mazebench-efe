@@ -1,5 +1,22 @@
 # MazeBench EFE Agent — full report
 
+> **Partly superseded. Read `GOAL.md` first.**
+>
+> The project switched on 11 Nov 2026 from ASCII observations to the engine's
+> **vision** mode, and narrowed to one objective: reproduce the published JEPA
+> world-model goal-reaching result on MazeBench. `GOAL.md` overrides this file
+> wherever they disagree.
+>
+> Still correct here: the benchmark facts (section 4), the traps (section 9),
+> the firewall rules, and the project history.
+>
+> Now wrong here: the three queued runs in section 7 — **do not run the
+> `--window 31` baseline**, there is no window in vision mode; anything about
+> `GridEncoder` or training from `runs/bigbuffer/`, which is ASCII over mock
+> dynamics and cannot train a vision model; and section 6's transfer verdict,
+> which searched for grid-world models and so asked the wrong question.
+> `facebookresearch/jepa-wms` is the right starting point.
+
 **Written 10 Nov 2026 on machine A. Audience: a fresh Claude session on
 machine B, with no memory of this project.**
 

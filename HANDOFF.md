@@ -1,9 +1,14 @@
 # Handoff
 
-> **Read `REPORT.md` first.** It is the full briefing — the algorithm, the
-> measured state, the open problems and the corrected next runs. This file is
-> the machine setup (section 1); `REPORT.md` supersedes sections 3, 4 and 5
-> below where they differ, in particular the run-2 command.
+> **Read `GOAL.md` first.** It states what we are actually doing right now —
+> reproducing the published JEPA goal-reaching result on MazeBench — and it
+> overrides both this file and `REPORT.md` wherever they disagree. Then
+> `PHASE0.md` for collecting frames.
+>
+> `REPORT.md` is the project's history, traps and benchmark facts, and is still
+> worth reading for those. Its queued runs are **cancelled**: do not run the
+> `--window 31` baseline. This file is the machine setup (section 1); sections
+> 3, 4 and 5 below are superseded.
 
 Everything needed to continue this project on a different machine. Written
 9 Nov 2026, because the assistant's own memory of this work is stored per

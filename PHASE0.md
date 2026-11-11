@@ -3,6 +3,11 @@
 Brief for the machine with the GPU. Written 10 Nov 2026. Read it all before
 starting; the first line changes what you were about to do.
 
+**Why this phase exists:** see `GOAL.md`. The objective is to reproduce the
+published JEPA goal-reaching result on MazeBench — roughly 80% success at
+reaching a goal screenshot — and that needs 3D frames, which only the real
+engine can produce. Nothing else is in scope until that number exists.
+
 ---
 
 ## 0. Stop the run you were queued to do
